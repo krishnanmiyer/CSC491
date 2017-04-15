@@ -1,26 +1,126 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mahadevan_K_Sorting" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e8c-Ml-Kuk">
+                                <rect key="frame" x="20" y="31" width="237.66666666666669" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7t-AG-wgS">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="Sort"/>
+                                        <connections>
+                                            <action selector="btnSortClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YiB-EX-pyu"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq4-4Q-RJ2">
+                                        <rect key="frame" x="78.666666666666657" y="5" width="31.999999999999986" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RSb-Vf-4gB">
+                                        <rect key="frame" x="110.66666666666667" y="1" width="127.00000000000001" height="29"/>
+                                        <segments>
+                                            <segment title="16"/>
+                                            <segment title="32"/>
+                                            <segment title="48"/>
+                                            <segment title="64"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nzz-Rt-dak">
+                                <rect key="frame" x="20" y="72" width="374" height="218"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i2e-rq-IsP">
+                                        <rect key="frame" x="8" y="15" width="358" height="29"/>
+                                        <segments>
+                                            <segment title="Insertion"/>
+                                            <segment title="Selection"/>
+                                            <segment title="Quick Sort"/>
+                                            <segment title="Merge Sort"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.55890883140000003" blue="0.00037984644719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="i2e-rq-IsP" firstAttribute="leading" secondItem="Nzz-Rt-dak" secondAttribute="leading" constant="8" id="HBW-jl-3gh"/>
+                                    <constraint firstAttribute="trailing" secondItem="i2e-rq-IsP" secondAttribute="trailing" constant="8" id="hsB-K1-KWh"/>
+                                    <constraint firstItem="i2e-rq-IsP" firstAttribute="top" secondItem="Nzz-Rt-dak" secondAttribute="top" constant="15" id="jnh-Oj-KgM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soo-qX-lAv">
+                                <rect key="frame" x="20" y="298" width="374" height="228"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aAO-7L-lXL">
+                                        <rect key="frame" x="8" y="8" width="358" height="29"/>
+                                        <segments>
+                                            <segment title="Insertion"/>
+                                            <segment title="Second"/>
+                                            <segment title="Quick Sort"/>
+                                            <segment title="Merge Sort"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.92439088920000001" blue="0.04134945919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="aAO-7L-lXL" firstAttribute="leading" secondItem="Soo-qX-lAv" secondAttribute="leading" constant="8" id="FGK-44-bmg"/>
+                                    <constraint firstItem="aAO-7L-lXL" firstAttribute="top" secondItem="Soo-qX-lAv" secondAttribute="top" constant="8" id="MHd-LW-iTe"/>
+                                    <constraint firstAttribute="trailing" secondItem="aAO-7L-lXL" secondAttribute="trailing" constant="8" id="QUy-DZ-Pe0"/>
+                                    <constraint firstAttribute="height" constant="228" id="jxR-HB-pT0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="top" secondItem="Nzz-Rt-dak" secondAttribute="bottom" constant="8" symbolic="YES" id="3rM-Gt-XpC"/>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="40F-s6-N3y"/>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="298" id="C8c-IU-CoB"/>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="top" secondItem="Nzz-Rt-dak" secondAttribute="bottom" constant="8" id="Cl2-F9-L2b"/>
+                            <constraint firstItem="Nzz-Rt-dak" firstAttribute="top" secondItem="e8c-Ml-Kuk" secondAttribute="bottom" constant="11" id="DvL-Lr-4Er"/>
+                            <constraint firstItem="e8c-Ml-Kuk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="G8N-Vt-Y2s"/>
+                            <constraint firstItem="Nzz-Rt-dak" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GyF-Rh-bhx"/>
+                            <constraint firstItem="e8c-Ml-Kuk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Pzp-gi-z9H"/>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="top" secondItem="Nzz-Rt-dak" secondAttribute="bottom" constant="8" id="ZiW-Fb-mIX"/>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aun-E4-pU0"/>
+                            <constraint firstItem="Nzz-Rt-dak" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="f8Y-pi-fZb"/>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="top" secondItem="Nzz-Rt-dak" secondAttribute="bottom" constant="8" id="lSY-Lh-0TP"/>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tj2-hO-yTe"/>
+                            <constraint firstItem="Soo-qX-lAv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zcY-M3-EgU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnSort" destination="h7t-AG-wgS" id="KTJ-NN-gRo"/>
+                        <outlet property="segElements" destination="RSb-Vf-4gB" id="N5t-kC-Jxa"/>
+                        <outlet property="segSortType1" destination="i2e-rq-IsP" id="PWh-Ti-CI1"/>
+                        <outlet property="segSortType2" destination="aAO-7L-lXL" id="pa8-1U-jky"/>
+                        <outlet property="vwGraph1" destination="Nzz-Rt-dak" id="5yo-G2-auU"/>
+                        <outlet property="vwGraph2" destination="Soo-qX-lAv" id="YJG-2e-5ph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.39130434782609" y="123.09782608695653"/>
         </scene>
     </scenes>
 </document>
