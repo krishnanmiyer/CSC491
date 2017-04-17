@@ -2,15 +2,16 @@
 //  Bar.swift
 //  Mahadevan_K_Sorting
 //
-//  Created by Krishnan Mahadevan on 4/14/17.
+//  Created by Krishnan Mahadevan on 4/10/17.
 //  Copyright © 2017 Krishnan Mahadevan. All rights reserved.
 //
 
 import UIKit
 
+//Bar class represents each bar in the graph
 internal class Bar: UIView {
 
-    private var _color: UIColor = UIColor.green
+    private var _color: UIColor = UIColor.white
     private var _height:Float = 0.0
     private var _width:Float = 0.0
     private var _x: Float = 0.0
@@ -34,6 +35,10 @@ internal class Bar: UIView {
         UIRectFill(rect)
     }
     
+    
+    /**
+     Updates Bar parameters.
+     */
     public func update() {
         self.frame.size = CGSize(width: CGFloat(_width), height: CGFloat(_height))
         self.frame.origin = CGPoint(x: CGFloat(_x), y: CGFloat(_y))

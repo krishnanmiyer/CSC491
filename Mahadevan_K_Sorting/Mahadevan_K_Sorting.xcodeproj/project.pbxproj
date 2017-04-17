@@ -7,17 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0307A7521EA43E240029260A /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7511EA43E240029260A /* Draw.swift */; };
+		0307A7541EA44F270029260A /* SortFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7531EA44F270029260A /* SortFactory.swift */; };
+		0307A7561EA44FD20029260A /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7551EA44FD20029260A /* SelectionSort.swift */; };
+		0307A7581EA44FE20029260A /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7571EA44FE20029260A /* QuickSort.swift */; };
+		0307A75A1EA44FF40029260A /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7591EA44FF40029260A /* MergeSort.swift */; };
 		0346B7D11EA144F60084E3FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346B7D01EA144F60084E3FD /* AppDelegate.swift */; };
 		0346B7D31EA144F60084E3FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346B7D21EA144F60084E3FD /* ViewController.swift */; };
 		0346B7D61EA144F60084E3FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0346B7D41EA144F60084E3FD /* Main.storyboard */; };
 		0346B7D81EA144F60084E3FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0346B7D71EA144F60084E3FD /* Assets.xcassets */; };
 		0346B7DB1EA144F60084E3FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0346B7D91EA144F60084E3FD /* LaunchScreen.storyboard */; };
 		0346B7E31EA1F2160084E3FD /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346B7E21EA1F2160084E3FD /* Bar.swift */; };
-		0346B7E51EA1FC760084E3FD /* BarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346B7E41EA1FC760084E3FD /* BarFactory.swift */; };
+		0346B7E51EA1FC760084E3FD /* BarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346B7E41EA1FC760084E3FD /* BarManager.swift */; };
 		0346B7E71EA220CA0084E3FD /* GraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346B7E61EA220CA0084E3FD /* GraphManager.swift */; };
+		0346B7E91EA3E4AB0084E3FD /* SortStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346B7E81EA3E4AB0084E3FD /* SortStrategy.swift */; };
+		0346B7EB1EA3E66E0084E3FD /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346B7EA1EA3E66E0084E3FD /* InsertionSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0307A7511EA43E240029260A /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		0307A7531EA44F270029260A /* SortFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortFactory.swift; sourceTree = "<group>"; };
+		0307A7551EA44FD20029260A /* SelectionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
+		0307A7571EA44FE20029260A /* QuickSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
+		0307A7591EA44FF40029260A /* MergeSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 		0346B7CD1EA144F60084E3FD /* Mahadevan_K_Sorting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mahadevan_K_Sorting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0346B7D01EA144F60084E3FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0346B7D21EA144F60084E3FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,8 +38,10 @@
 		0346B7DA1EA144F60084E3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0346B7DC1EA144F60084E3FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0346B7E21EA1F2160084E3FD /* Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
-		0346B7E41EA1FC760084E3FD /* BarFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarFactory.swift; sourceTree = "<group>"; };
+		0346B7E41EA1FC760084E3FD /* BarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarManager.swift; sourceTree = "<group>"; };
 		0346B7E61EA220CA0084E3FD /* GraphManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphManager.swift; sourceTree = "<group>"; };
+		0346B7E81EA3E4AB0084E3FD /* SortStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortStrategy.swift; sourceTree = "<group>"; };
+		0346B7EA1EA3E66E0084E3FD /* InsertionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +81,15 @@
 				0346B7D91EA144F60084E3FD /* LaunchScreen.storyboard */,
 				0346B7DC1EA144F60084E3FD /* Info.plist */,
 				0346B7E21EA1F2160084E3FD /* Bar.swift */,
-				0346B7E41EA1FC760084E3FD /* BarFactory.swift */,
+				0346B7E41EA1FC760084E3FD /* BarManager.swift */,
 				0346B7E61EA220CA0084E3FD /* GraphManager.swift */,
+				0346B7E81EA3E4AB0084E3FD /* SortStrategy.swift */,
+				0346B7EA1EA3E66E0084E3FD /* InsertionSort.swift */,
+				0307A7511EA43E240029260A /* Draw.swift */,
+				0307A7531EA44F270029260A /* SortFactory.swift */,
+				0307A7551EA44FD20029260A /* SelectionSort.swift */,
+				0307A7571EA44FE20029260A /* QuickSort.swift */,
+				0307A7591EA44FF40029260A /* MergeSort.swift */,
 			);
 			path = Mahadevan_K_Sorting;
 			sourceTree = "<group>";
@@ -146,11 +167,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0307A7541EA44F270029260A /* SortFactory.swift in Sources */,
 				0346B7D31EA144F60084E3FD /* ViewController.swift in Sources */,
 				0346B7E31EA1F2160084E3FD /* Bar.swift in Sources */,
 				0346B7E71EA220CA0084E3FD /* GraphManager.swift in Sources */,
+				0307A7581EA44FE20029260A /* QuickSort.swift in Sources */,
+				0307A7561EA44FD20029260A /* SelectionSort.swift in Sources */,
+				0307A75A1EA44FF40029260A /* MergeSort.swift in Sources */,
+				0307A7521EA43E240029260A /* Draw.swift in Sources */,
+				0346B7EB1EA3E66E0084E3FD /* InsertionSort.swift in Sources */,
 				0346B7D11EA144F60084E3FD /* AppDelegate.swift in Sources */,
-				0346B7E51EA1FC760084E3FD /* BarFactory.swift in Sources */,
+				0346B7E91EA3E4AB0084E3FD /* SortStrategy.swift in Sources */,
+				0346B7E51EA1FC760084E3FD /* BarManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +344,7 @@
 				0346B7E11EA144F60084E3FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

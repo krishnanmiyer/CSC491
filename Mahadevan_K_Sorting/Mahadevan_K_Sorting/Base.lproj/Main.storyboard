@@ -46,10 +46,13 @@
                                             <segment title="48"/>
                                             <segment title="64"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segElementsValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="GvN-T9-N7j"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nzz-Rt-dak">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nzz-Rt-dak" customClass="UIControl">
                                 <rect key="frame" x="20" y="72" width="374" height="218"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i2e-rq-IsP">
@@ -62,27 +65,25 @@
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.55890883140000003" blue="0.00037984644719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="i2e-rq-IsP" firstAttribute="leading" secondItem="Nzz-Rt-dak" secondAttribute="leading" constant="8" id="HBW-jl-3gh"/>
                                     <constraint firstAttribute="trailing" secondItem="i2e-rq-IsP" secondAttribute="trailing" constant="8" id="hsB-K1-KWh"/>
                                     <constraint firstItem="i2e-rq-IsP" firstAttribute="top" secondItem="Nzz-Rt-dak" secondAttribute="top" constant="15" id="jnh-Oj-KgM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soo-qX-lAv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soo-qX-lAv" customClass="UIControl">
                                 <rect key="frame" x="20" y="298" width="374" height="228"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aAO-7L-lXL">
                                         <rect key="frame" x="8" y="8" width="358" height="29"/>
                                         <segments>
                                             <segment title="Insertion"/>
-                                            <segment title="Second"/>
+                                            <segment title="Selection"/>
                                             <segment title="Quick Sort"/>
                                             <segment title="Merge Sort"/>
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.92439088920000001" blue="0.04134945919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="aAO-7L-lXL" firstAttribute="leading" secondItem="Soo-qX-lAv" secondAttribute="leading" constant="8" id="FGK-44-bmg"/>
                                     <constraint firstItem="aAO-7L-lXL" firstAttribute="top" secondItem="Soo-qX-lAv" secondAttribute="top" constant="8" id="MHd-LW-iTe"/>
@@ -112,8 +113,8 @@
                     <connections>
                         <outlet property="btnSort" destination="h7t-AG-wgS" id="KTJ-NN-gRo"/>
                         <outlet property="segElements" destination="RSb-Vf-4gB" id="N5t-kC-Jxa"/>
-                        <outlet property="segSortType1" destination="i2e-rq-IsP" id="PWh-Ti-CI1"/>
-                        <outlet property="segSortType2" destination="aAO-7L-lXL" id="pa8-1U-jky"/>
+                        <outlet property="segSortType1" destination="i2e-rq-IsP" id="PHZ-JY-a8M"/>
+                        <outlet property="segSortType2" destination="aAO-7L-lXL" id="BNW-uH-iWX"/>
                         <outlet property="vwGraph1" destination="Nzz-Rt-dak" id="5yo-G2-auU"/>
                         <outlet property="vwGraph2" destination="Soo-qX-lAv" id="YJG-2e-5ph"/>
                     </connections>

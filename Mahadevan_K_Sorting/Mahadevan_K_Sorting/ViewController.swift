@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Mahadevan_K_Sorting
 //
-//  Created by Krishnan Mahadevan on 4/14/17.
+//  Created by Krishnan Mahadevan on 4/10/17.
 //  Copyright © 2017 Krishnan Mahadevan. All rights reserved.
 //
 
@@ -17,25 +17,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var vwGraph1: UIView!
     @IBOutlet weak var vwGraph2: UIView!
     
+    var graph1:GraphManager!
+    var graph2:GraphManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let k = BarFactory.getBar(color: UIColor.blue)
+        //instantiate graph managers
+        graph1 = GraphManager(container: vwGraph1, graphColor: UIColor.green)
+        graph2 = GraphManager(container: vwGraph2, graphColor: UIColor.brown)
         
-        // Add the view to the view hierarchy so that it shows up on screen
-        self.view.addSubview(k)
+        //initiate shuffled graph
         
-        let j = BarFactory.getBar(color: UIColor.yellow)
-        j.x = j.x + 100.0
-        // Add the view to the view hierarchy so that it shows up on screen
-        self.view.addSubview(j)
-
-        let i = BarFactory.getBar(color: UIColor.blue)
-        i.x = i.x + 200.0
-        // Add the view to the view hierarchy so that it shows up on screen
-        self.view.addSubview(i)
-    }
+     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,10 +38,28 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnSortClick(_ sender: Any) {
-        //TODO: Start Sort
+        
+        //initiate thread to execute sort
+        
+        let queue = DispatchQueue.global(qos: .background)
+        queue.async {
+            let sortType = SortFactory.getSortStrategy(self.segSortType1.selectedSegmentIndex)
+            self.graph1.sort(sortType)
+        }
+        queue.async {
+            let sortType = SortFactory.getSortStrategy(self.segSortType2.selectedSegmentIndex)
+            self.graph2.sort(sortType)
+        }
     }
 
+    @IBAction func segElementsValueChanged(_ sender: UISegmentedControl) {
+        if let selected = sender.titleForSegment(at: sender.selectedSegmentIndex) {
+            graphInit(Int(selected)!)
+        }
+    }
     
-    
+    private func graphInit(_ selected: Int) {
+        graph1.drawGraph(selected)
+        graph2.drawGraph(selected)
+    }
 }
-
