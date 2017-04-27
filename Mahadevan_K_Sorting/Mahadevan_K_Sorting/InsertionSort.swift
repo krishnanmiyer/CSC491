@@ -32,12 +32,11 @@ public struct InsertionSort: SortStrategy {
                     DispatchQueue.main.async {
                         callback!(y - 1, b[y])
                     }
-                    usleep(150000)
+                    usleep(15000)
                 }
                 y -= 1
             }
             b[y] = temp
-            
         }
         return b
     }

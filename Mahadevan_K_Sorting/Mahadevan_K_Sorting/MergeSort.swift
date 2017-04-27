@@ -32,18 +32,18 @@ public struct MergeSort: SortStrategy {
             } else {
                 mergedList.append(right.removeFirst())
             }
-            
-             if callback != nil {
-                for i in 0 ..< mergedList.count - 1 {
-                    DispatchQueue.main.async {
-                        callback!(i, mergedList[i])
-                    }
+        }
+        
+        let merged = mergedList + left + right
+        if callback != nil {
+            for i in 0 ..< merged.count - 1 {
+                DispatchQueue.main.async {
+                    callback!(i, merged[i])
                 }
                 usleep(10000)
             }
         }
-        
-        return mergedList + left + right
+        return merged;
     }
     
     func mergeSort(_ list:[Int], _ callback: ((Int, Int) -> ())? = nil) -> [Int] {
@@ -56,5 +56,4 @@ public struct MergeSort: SortStrategy {
         
         return merge(left: mergeSort(leftList), right: mergeSort(rightList), callback)
     }
-    
 }

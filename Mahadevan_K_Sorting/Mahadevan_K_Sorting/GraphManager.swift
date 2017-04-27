@@ -10,13 +10,10 @@ import Foundation
 import GameKit
 
 /**
- 
  Manages the graph in the view. Each view must initiate the graph manager to implement a graph
- 
  */
 
 internal class GraphManager {
-    
     private var _container: UIView!
     private var _elements:[Int] = [Int]()
     private var _bars:[Bar] = [Bar]()
@@ -24,15 +21,10 @@ internal class GraphManager {
     private let poolSize: Int = 64
     private var _color: UIColor
     
-    
     /**
-     
      constructor to Graph Manager
-     
      @param container: UIView that holds the graph
-     
      @param color: Graph color
-     
      */
     public init(container: UIView, graphColor color: UIColor) {
         _container = container;
@@ -42,11 +34,8 @@ internal class GraphManager {
 
     /**
      Performs Sorting depending upon Sort Strategry. Implements Strategry pattern for sorting
-     
      @param sortStrategry.
-     
      */
-    
     public func sort(_ sortStrategy: SortStrategy) {
         let result = sortStrategy.sort(_elements, updateBar)
         print(result)
@@ -54,9 +43,7 @@ internal class GraphManager {
     
     /**
      Gets an array of data elements
-     
      @param count: Number of items
-     
      @return array of int
      */
     private func getElements(_ count: Int) -> [Int] {
@@ -68,15 +55,13 @@ internal class GraphManager {
         }
         
         //Shuffle the array
-        let shuffled = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: elements) as! [Int]
+        let shuffled = elements.shuffled()
         return shuffled
     }
-
+    
     /**
      Gets an array of Bar object
-     
      @param count: Number of items
-     
      @return array of Bar
      */
     private func getBars (_ count: Int) -> [Bar] {
@@ -92,9 +77,7 @@ internal class GraphManager {
     
     /**
      Sets the bar object parameters the draws the object on the view
-     
      @param dataSize: Number of item
-     
      */
     public func drawGraph(_ dataSize: Int) {
         //reset all elements
@@ -107,7 +90,7 @@ internal class GraphManager {
         _bars = getBars(dataSize)
         
         //add view to the container
-        let maxWidth:Int = Int(_container.frame.width) - 8 //max graph width
+        let maxWidth:Int = Int(_container.frame.width) - 10 //max graph width
         let gapSize:Int = 1 //space between the graph
         let startAt:Int = 8
         let barWidth = (maxWidth - (gapSize * dataSize)) / dataSize
@@ -128,9 +111,7 @@ internal class GraphManager {
     }
     
     /**
- 
      Rests all objects in the class
-     
     */
     private func reset() {
         //removes bar from super view
@@ -151,14 +132,40 @@ internal class GraphManager {
     }
     
     /**
-     
      Call back method to update graph when Sort is in progress
-     
      */
     public func updateBar(_ index: Int, _ value: Int) {
         let y:Int = Int(_container.frame.height) - 8
         let bar = _bars[index]
         bar.height = Float(value)
         bar.y = Float(y - value)
+    }
+}
+
+/**
+ Source: http://stackoverflow.com/questions/24026510/how-do-i-shuffle-an-array-in-swift
+ */
+
+extension MutableCollection where Indices.Iterator.Element == Index {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffled , unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            guard d != 0 else { continue }
+            let i = index(firstUnshuffled, offsetBy: d)
+            swap(&self[firstUnshuffled], &self[i])
+        }
+    }
+}
+
+extension Sequence {
+    /// Returns an array with the contents of this sequence, shuffled.
+    func shuffled() -> [Iterator.Element] {
+        var result = Array(self)
+        result.shuffle()
+        return result
     }
 }

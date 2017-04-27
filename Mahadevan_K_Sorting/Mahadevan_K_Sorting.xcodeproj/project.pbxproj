@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0307A7521EA43E240029260A /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7511EA43E240029260A /* Draw.swift */; };
 		0307A7541EA44F270029260A /* SortFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7531EA44F270029260A /* SortFactory.swift */; };
 		0307A7561EA44FD20029260A /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7551EA44FD20029260A /* SelectionSort.swift */; };
 		0307A7581EA44FE20029260A /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7571EA44FE20029260A /* QuickSort.swift */; };
@@ -25,7 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0307A7511EA43E240029260A /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
 		0307A7531EA44F270029260A /* SortFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortFactory.swift; sourceTree = "<group>"; };
 		0307A7551EA44FD20029260A /* SelectionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		0307A7571EA44FE20029260A /* QuickSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 				0346B7E61EA220CA0084E3FD /* GraphManager.swift */,
 				0346B7E81EA3E4AB0084E3FD /* SortStrategy.swift */,
 				0346B7EA1EA3E66E0084E3FD /* InsertionSort.swift */,
-				0307A7511EA43E240029260A /* Draw.swift */,
 				0307A7531EA44F270029260A /* SortFactory.swift */,
 				0307A7551EA44FD20029260A /* SelectionSort.swift */,
 				0307A7571EA44FE20029260A /* QuickSort.swift */,
@@ -174,7 +171,6 @@
 				0307A7581EA44FE20029260A /* QuickSort.swift in Sources */,
 				0307A7561EA44FD20029260A /* SelectionSort.swift in Sources */,
 				0307A75A1EA44FF40029260A /* MergeSort.swift in Sources */,
-				0307A7521EA43E240029260A /* Draw.swift in Sources */,
 				0346B7EB1EA3E66E0084E3FD /* InsertionSort.swift in Sources */,
 				0346B7D11EA144F60084E3FD /* AppDelegate.swift in Sources */,
 				0346B7E91EA3E4AB0084E3FD /* SortStrategy.swift in Sources */,

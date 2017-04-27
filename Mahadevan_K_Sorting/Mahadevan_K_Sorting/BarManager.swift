@@ -24,9 +24,7 @@ public class BarManager {
     
     /**
      Constructor
-     
      @param poolSize set pool size for each graph
-     
      @return none
      */
     init(_ poolSize: Int) {
@@ -41,9 +39,7 @@ public class BarManager {
     
     /**
      returns bar object from reserve pool. implements prototype pattern to reuse objects
-     
      @param color: bar color
-     
      @return bar object
      */
     internal func getBar(color: UIColor) -> Bar {
@@ -66,9 +62,6 @@ public class BarManager {
     
     /**
      clears the active pool and sends all objects back to the reserve pool
-     
-     @param bar Consectetur adipisicing elit.
-     
      */
     internal func reset() {
         //reset all objects to default

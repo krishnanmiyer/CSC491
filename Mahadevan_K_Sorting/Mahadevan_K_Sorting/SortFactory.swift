@@ -9,12 +9,8 @@
 import Foundation
 
 /**
- 
  Implements Factory pattern to return a particular sort object
- 
  */
-
-
 public class SortFactory {
     internal static func getSortStrategy(_ order: Int) -> SortStrategy {
         switch(order) {

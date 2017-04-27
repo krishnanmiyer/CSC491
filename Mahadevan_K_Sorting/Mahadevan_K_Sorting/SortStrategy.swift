@@ -9,9 +9,7 @@
 import Foundation
 
 /**
- 
  Implements Stategry pattern to implement various Sort Strategies
- 
  */
 
 protocol SortStrategy {

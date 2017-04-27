@@ -38,7 +38,7 @@ public struct SelectionSort: SortStrategy {
                 DispatchQueue.main.async {
                     callback!(x, z[x])
                 }
-                usleep(150000)
+                usleep(15000)
             }
         }
         return z

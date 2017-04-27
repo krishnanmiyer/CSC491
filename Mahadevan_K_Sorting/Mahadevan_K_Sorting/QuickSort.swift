@@ -52,7 +52,7 @@ public struct QuickSort: SortStrategy {
                     callback!(l, lvalue)
                     callback!(r, rvalue)
                 }
-                usleep(150000)
+                usleep(15000)
             }
             
             l += 1
