@@ -12,6 +12,7 @@
 		0352E2141EB4E26400C685B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0352E2121EB4E26400C685B8 /* Main.storyboard */; };
 		0352E2161EB4E26400C685B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0352E2151EB4E26400C685B8 /* Assets.xcassets */; };
 		0352E2191EB4E26400C685B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0352E2171EB4E26400C685B8 /* LaunchScreen.storyboard */; };
+		4520DB15AD6CBAB1F174EC40 /* Pods_Mahadevan_K_LAMetro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75A355ED318F3EA7F3E21CA /* Pods_Mahadevan_K_LAMetro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0352E2151EB4E26400C685B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0352E2181EB4E26400C685B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0352E21A1EB4E26400C685B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B75A355ED318F3EA7F3E21CA /* Pods_Mahadevan_K_LAMetro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mahadevan_K_LAMetro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4AF6046C88B629F438A4DE4 /* Pods-Mahadevan_K_LAMetro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_LAMetro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_LAMetro/Pods-Mahadevan_K_LAMetro.debug.xcconfig"; sourceTree = "<group>"; };
+		D59BE45499AD39F93AFE1D8B /* Pods-Mahadevan_K_LAMetro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_LAMetro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_LAMetro/Pods-Mahadevan_K_LAMetro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4520DB15AD6CBAB1F174EC40 /* Pods_Mahadevan_K_LAMetro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0352E20D1EB4E26400C685B8 /* Mahadevan_K_LAMetro */,
 				0352E20C1EB4E26400C685B8 /* Products */,
+				4D5E21053AB17B6F69226953 /* Pods */,
+				072F2D654E983353E1CFE487 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Mahadevan_K_LAMetro;
 			sourceTree = "<group>";
 		};
+		072F2D654E983353E1CFE487 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B75A355ED318F3EA7F3E21CA /* Pods_Mahadevan_K_LAMetro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D5E21053AB17B6F69226953 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF6046C88B629F438A4DE4 /* Pods-Mahadevan_K_LAMetro.debug.xcconfig */,
+				D59BE45499AD39F93AFE1D8B /* Pods-Mahadevan_K_LAMetro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0352E21D1EB4E26400C685B8 /* Build configuration list for PBXNativeTarget "Mahadevan_K_LAMetro" */;
 			buildPhases = (
+				81B181CD881FA7C2EABA1A29 /* [CP] Check Pods Manifest.lock */,
 				0352E2071EB4E26300C685B8 /* Sources */,
 				0352E2081EB4E26300C685B8 /* Frameworks */,
 				0352E2091EB4E26300C685B8 /* Resources */,
+				2D45BEA0918D6C9B70C80725 /* [CP] Embed Pods Frameworks */,
+				1B976940A213C58E64DCDF04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B976940A213C58E64DCDF04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mahadevan_K_LAMetro/Pods-Mahadevan_K_LAMetro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D45BEA0918D6C9B70C80725 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mahadevan_K_LAMetro/Pods-Mahadevan_K_LAMetro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81B181CD881FA7C2EABA1A29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0352E2071EB4E26300C685B8 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		0352E21E1EB4E26400C685B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4AF6046C88B629F438A4DE4 /* Pods-Mahadevan_K_LAMetro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MQ79U7S5FQ;
@@ -274,6 +350,7 @@
 		};
 		0352E21F1EB4E26400C685B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D59BE45499AD39F93AFE1D8B /* Pods-Mahadevan_K_LAMetro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MQ79U7S5FQ;

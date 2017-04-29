@@ -1,0 +1,6 @@
+framework module Pods_Mahadevan_K_LAMetro {
+  umbrella header "Pods-Mahadevan_K_LAMetro-umbrella.h"
+
+  export *
+  module * { export * }
+}
