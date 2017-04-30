@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Mahadevan_K_LAMetro
 //
-//  Created by Krishnan Mahadevan on 4/29/17.
+//  Created by Krishnan Mahadevan on 4/23/17.
 //  Copyright © 2017 Krishnan Mahadevan. All rights reserved.
 //
 
@@ -80,7 +80,7 @@ class RealTimeViewController: UITableViewController {
     }
     
     func loadMapImage() {
-        MetroService.getMapImage(self.stop.location.latitude, self.stop.location.longitude, self.stop.displayName) { mapImage in
+        MetroService.getMapImage(self.stop.location.latitude, self.stop.location.longitude, self.stop.displayName, Int(self.map.frame.width), Int(self.map.frame.height)) { mapImage in
             DispatchQueue.main.async {
                 self.map.image = mapImage
             }

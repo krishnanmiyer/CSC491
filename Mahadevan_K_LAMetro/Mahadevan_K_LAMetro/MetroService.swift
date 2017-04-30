@@ -2,7 +2,7 @@
 //  MetroService.swift
 //  Mahadevan_K_LAMetro
 //
-//  Created by Krishnan Mahadevan on 4/29/17.
+//  Created by Krishnan Mahadevan on 4/24/17.
 //  varyright © 2017 Krishnan Mahadevan. All rights reserved.
 //
 
@@ -10,9 +10,16 @@ import Foundation
 import SwiftyJSON
 
 public class MetroService {
+
+    /**
+     Returns Metro Bus Routes from LA Metro API Service.
+
+     - returns: An Array of RoutModel instance.
+     */
     public static func getRoutes(completion: @escaping ([RouteModel]) -> Void) {
         var routes:[RouteModel] = []
         let feed:String = "http://api.metro.net/agencies/lametro/routes/"
+        
         guard let feedUrl = URL(string: feed) else { return}
         
         let request = URLRequest(url: feedUrl)
@@ -37,7 +44,14 @@ public class MetroService {
             completion(routes)
             }.resume()
     }
-    
+
+    /**
+     Returns Metro Bus Stops in sequence for a Route from LA Metro API Service.
+     
+     - parameter routeId:  Int Route identifier.
+     
+     - returns: An Array of RoutModel instance.
+     */
     public static func getStops(_ routeId: Int, completion: @escaping ([StopModel]) -> Void) {
         var stops:[StopModel] = []
         
@@ -72,6 +86,13 @@ public class MetroService {
             }.resume()
     }
     
+    /**
+     Returns Real time status of buses for a Stop.
+     
+     - parameter stopId:  Int Stop identifier.
+     
+     - returns: An Array of RealTimeModel instance.
+     */
     public static func getRealTime(_ stopId: Int, completion: @escaping ([RealTimeModel]) -> Void) {
         var rtdata:[RealTimeModel] = []
         
@@ -111,12 +132,23 @@ public class MetroService {
             }.resume()
     }
     
-    public static func getMapImage(_ latitude:Double, _ longitude:Double, _ label: String, completion: @escaping (UIImage) -> Void) {
+    /**
+     Returns map image with markers from Google Static image service.
+     
+     - parameter latitude:  Double location latitude.
+     - parameter longitude:  Double location longitude.
+     - parameter label:  String Label of the bus stop.
+     - parameter width:  Int Image Width.
+     - parameter height:  Int Image Height.
+     
+     - returns: UIImage object.
+     */
+    public static func getMapImage(_ latitude:Double, _ longitude:Double, _ label: String, _ width: Int, _ height: Int, completion: @escaping (UIImage) -> Void) {
 
         let googleapiKey="AIzaSyBZRkS2PrPrhX3J2kSjhrMf99llgB1fyWE"
         var mapImage:UIImage!
         
-        let feed: String = "https://maps.googleapis.com/maps/api/staticmap?center=\(latitude),\(longitude)&zoom=14&size=600x400&markers=color:blue|label:\(label)|\(latitude),\(longitude)&key=\(googleapiKey)"
+        let feed: String = "https://maps.googleapis.com/maps/api/staticmap?center=\(latitude),\(longitude)&zoom=16&size=\(width + 100)x\(height + 100)&markers=color:blue|label:\(label)|\(latitude),\(longitude)&key=\(googleapiKey)"
         
         guard let feedUrl = URL(string: feed.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else { return }
         
