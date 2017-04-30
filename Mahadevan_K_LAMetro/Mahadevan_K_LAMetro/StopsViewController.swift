@@ -12,6 +12,7 @@ class StopsViewController: UITableViewController {
 
     var route: RouteModel!
     var stops: [StopModel] = []
+    var dataAvailable:Bool =  false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +42,20 @@ class StopsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return stops.count
+        return dataAvailable ? stops.count : 10
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "stop", for: indexPath)
-        cell.textLabel?.text = stops[indexPath.row].displayName
-        return cell
+        if dataAvailable {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "stop", for: indexPath)
+            cell.textLabel?.text = stops[indexPath.row].displayName
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "placeholder", for: indexPath)
+            cell.textLabel?.text = "Loding..."
+            return cell
+        }
     }
 
     private func loadData() {
@@ -55,6 +63,7 @@ class StopsViewController: UITableViewController {
         MetroService.getStops(route.id) { stopsData in
             DispatchQueue.main.async {
                 self.stops = stopsData
+                self.dataAvailable = true
                 self.tableView.reloadData()
             }
         }

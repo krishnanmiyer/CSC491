@@ -15,6 +15,7 @@ class RealTimeViewController: UITableViewController {
     
     var stop:StopModel!
     var records:[RealTimeModel] = []
+    var dataAvailable:Bool =  false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,27 +46,34 @@ class RealTimeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.records.count
+        return dataAvailable ? self.records.count : 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "realtime", for: indexPath)
+        if dataAvailable {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "realtime", for: indexPath)
+            cell.textLabel?.text = "Bus Route: \(records[indexPath.row].routeId)"
         
-        cell.textLabel?.text = "Bus Route: \(records[indexPath.row].routeId)"
-        
-        if (records[indexPath.row].seconds > 59) {
-            cell.detailTextLabel?.text = "...arrives in \(Int(records[indexPath.row].minutes)) minute(s)"
+            if (records[indexPath.row].seconds > 59) {
+                cell.detailTextLabel?.text = "...arrives in \(Int(records[indexPath.row].minutes)) minute(s)"
+            }
+            else {
+                cell.detailTextLabel?.text = "...arrives in \(Int(records[indexPath.row].seconds)) second(s)"
+            }
+            return cell
         }
         else {
-            cell.detailTextLabel?.text = "..arrives in \(Int(records[indexPath.row].seconds)) second(s)"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "placeholder", for: indexPath)
+            cell.textLabel?.text = "Loading..."
+            return cell
         }
-        return cell
     }
     
-    @objc private func loadData() {
+    @objc private func loadData() {       
         MetroService.getRealTime(self.stop.id) { realTimeData in
             DispatchQueue.main.async {
                 self.records = realTimeData
+                self.dataAvailable = true
                 self.tableView.reloadData()
             }
         }

@@ -11,6 +11,7 @@ import UIKit
 class RoutesViewController: UITableViewController {
     
     var routes:[RouteModel] = []
+    var dataAvailable:Bool =  false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +33,20 @@ class RoutesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.routes.count
+        return dataAvailable ? self.routes.count: 15
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "route", for: indexPath)
-        
-        cell.textLabel?.text = routes[indexPath.row].displayName
-        return cell
+        if dataAvailable {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "route", for: indexPath)
+            cell.textLabel?.text = routes[indexPath.row].displayName
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "placeholder", for: indexPath)
+            cell.textLabel?.text = "Loding..."
+            return cell
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +61,7 @@ class RoutesViewController: UITableViewController {
         MetroService.getRoutes() { routeData in
             DispatchQueue.main.async {
                 self.routes = routeData
+                self.dataAvailable = true
                 self.tableView.reloadData()
             }
         }
