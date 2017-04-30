@@ -7,22 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034ED8141EB535DA002E376E /* RoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ED8131EB535DA002E376E /* RoutesViewController.swift */; };
+		034ED8161EB53668002E376E /* StopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ED8151EB53668002E376E /* StopsViewController.swift */; };
+		034ED8181EB53A5D002E376E /* MetroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ED8171EB53A5D002E376E /* MetroService.swift */; };
 		0352E20F1EB4E26400C685B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352E20E1EB4E26400C685B8 /* AppDelegate.swift */; };
-		0352E2111EB4E26400C685B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352E2101EB4E26400C685B8 /* ViewController.swift */; };
+		0352E2111EB4E26400C685B8 /* RealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352E2101EB4E26400C685B8 /* RealTimeViewController.swift */; };
 		0352E2141EB4E26400C685B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0352E2121EB4E26400C685B8 /* Main.storyboard */; };
 		0352E2161EB4E26400C685B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0352E2151EB4E26400C685B8 /* Assets.xcassets */; };
 		0352E2191EB4E26400C685B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0352E2171EB4E26400C685B8 /* LaunchScreen.storyboard */; };
+		03BE22B11EB525440078FA5C /* RouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE22B01EB525440078FA5C /* RouteModel.swift */; };
+		03BE22B41EB525610078FA5C /* RealTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE22B21EB525610078FA5C /* RealTimeModel.swift */; };
+		03BE22B51EB525610078FA5C /* StopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE22B31EB525610078FA5C /* StopModel.swift */; };
 		4520DB15AD6CBAB1F174EC40 /* Pods_Mahadevan_K_LAMetro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75A355ED318F3EA7F3E21CA /* Pods_Mahadevan_K_LAMetro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		034ED8131EB535DA002E376E /* RoutesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutesViewController.swift; sourceTree = "<group>"; };
+		034ED8151EB53668002E376E /* StopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsViewController.swift; sourceTree = "<group>"; };
+		034ED8171EB53A5D002E376E /* MetroService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroService.swift; sourceTree = "<group>"; };
 		0352E20B1EB4E26400C685B8 /* Mahadevan_K_LAMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mahadevan_K_LAMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0352E20E1EB4E26400C685B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0352E2101EB4E26400C685B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0352E2101EB4E26400C685B8 /* RealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeViewController.swift; sourceTree = "<group>"; };
 		0352E2131EB4E26400C685B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0352E2151EB4E26400C685B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0352E2181EB4E26400C685B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0352E21A1EB4E26400C685B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03BE22B01EB525440078FA5C /* RouteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteModel.swift; sourceTree = "<group>"; };
+		03BE22B21EB525610078FA5C /* RealTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeModel.swift; sourceTree = "<group>"; };
+		03BE22B31EB525610078FA5C /* StopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopModel.swift; sourceTree = "<group>"; };
 		B75A355ED318F3EA7F3E21CA /* Pods_Mahadevan_K_LAMetro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mahadevan_K_LAMetro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AF6046C88B629F438A4DE4 /* Pods-Mahadevan_K_LAMetro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_LAMetro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_LAMetro/Pods-Mahadevan_K_LAMetro.debug.xcconfig"; sourceTree = "<group>"; };
 		D59BE45499AD39F93AFE1D8B /* Pods-Mahadevan_K_LAMetro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_LAMetro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_LAMetro/Pods-Mahadevan_K_LAMetro.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,12 +73,18 @@
 		0352E20D1EB4E26400C685B8 /* Mahadevan_K_LAMetro */ = {
 			isa = PBXGroup;
 			children = (
+				03BE22B21EB525610078FA5C /* RealTimeModel.swift */,
+				03BE22B31EB525610078FA5C /* StopModel.swift */,
+				03BE22B01EB525440078FA5C /* RouteModel.swift */,
 				0352E20E1EB4E26400C685B8 /* AppDelegate.swift */,
-				0352E2101EB4E26400C685B8 /* ViewController.swift */,
+				0352E2101EB4E26400C685B8 /* RealTimeViewController.swift */,
 				0352E2121EB4E26400C685B8 /* Main.storyboard */,
 				0352E2151EB4E26400C685B8 /* Assets.xcassets */,
 				0352E2171EB4E26400C685B8 /* LaunchScreen.storyboard */,
 				0352E21A1EB4E26400C685B8 /* Info.plist */,
+				034ED8131EB535DA002E376E /* RoutesViewController.swift */,
+				034ED8151EB53668002E376E /* StopsViewController.swift */,
+				034ED8171EB53A5D002E376E /* MetroService.swift */,
 			);
 			path = Mahadevan_K_LAMetro;
 			sourceTree = "<group>";
@@ -212,8 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0352E2111EB4E26400C685B8 /* ViewController.swift in Sources */,
+				03BE22B41EB525610078FA5C /* RealTimeModel.swift in Sources */,
+				03BE22B11EB525440078FA5C /* RouteModel.swift in Sources */,
+				03BE22B51EB525610078FA5C /* StopModel.swift in Sources */,
+				034ED8161EB53668002E376E /* StopsViewController.swift in Sources */,
+				0352E2111EB4E26400C685B8 /* RealTimeViewController.swift in Sources */,
+				034ED8181EB53A5D002E376E /* MetroService.swift in Sources */,
 				0352E20F1EB4E26400C685B8 /* AppDelegate.swift in Sources */,
+				034ED8141EB535DA002E376E /* RoutesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +405,7 @@
 				0352E21F1EB4E26400C685B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
