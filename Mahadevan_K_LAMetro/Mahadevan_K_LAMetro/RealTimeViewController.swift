@@ -54,6 +54,10 @@ class RealTimeViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "realtime", for: indexPath)
             cell.textLabel?.text = "Bus Route: \(records[indexPath.row].routeId)"
         
+            if (records.count < 1) {
+                cell.detailTextLabel?.text = "Data unavailable...!"
+            }
+            
             if (records[indexPath.row].seconds > 59) {
                 cell.detailTextLabel?.text = "...arrives in \(Int(records[indexPath.row].minutes)) minute(s)"
             }
