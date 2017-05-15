@@ -56,8 +56,8 @@ class CircleView: UIView {
     func moveCircle(x: CGFloat, y: CGFloat) {
         frame.origin.x = x
         frame.origin.y = y
-        circle.setNeedsFocusUpdate()
-        self.setNeedsFocusUpdate()
+        circle.setNeedsDisplay()
+        self.setNeedsDisplay()
     }
     
     public var x: CGFloat {

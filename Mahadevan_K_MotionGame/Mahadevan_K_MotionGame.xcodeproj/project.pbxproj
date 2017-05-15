@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		037469A31EC87376006736A5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037469A21EC87376006736A5 /* CircleView.swift */; };
-		037469A51EC880D8006736A5 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037469A41EC880D8006736A5 /* BlockView.swift */; };
 		0374980B1EC7F7DE00E2D96B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374980A1EC7F7DE00E2D96B /* AppDelegate.swift */; };
 		0374980D1EC7F7DE00E2D96B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374980C1EC7F7DE00E2D96B /* ViewController.swift */; };
 		037498101EC7F7DE00E2D96B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0374980E1EC7F7DE00E2D96B /* Main.storyboard */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		037469A21EC87376006736A5 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		037469A41EC880D8006736A5 /* BlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		037498071EC7F7DE00E2D96B /* Mahadevan_K_MotionGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mahadevan_K_MotionGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0374980A1EC7F7DE00E2D96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0374980C1EC7F7DE00E2D96B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				037498111EC7F7DE00E2D96B /* Assets.xcassets */,
 				037498131EC7F7DE00E2D96B /* LaunchScreen.storyboard */,
 				037498161EC7F7DE00E2D96B /* Info.plist */,
-				037469A41EC880D8006736A5 /* BlockView.swift */,
 			);
 			path = Mahadevan_K_MotionGame;
 			sourceTree = "<group>";
@@ -218,7 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				037469A51EC880D8006736A5 /* BlockView.swift in Sources */,
 				037469A31EC87376006736A5 /* CircleView.swift in Sources */,
 				0374980D1EC7F7DE00E2D96B /* ViewController.swift in Sources */,
 				0374980B1EC7F7DE00E2D96B /* AppDelegate.swift in Sources */,
