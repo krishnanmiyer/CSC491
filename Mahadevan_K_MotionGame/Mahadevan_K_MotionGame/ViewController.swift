@@ -11,12 +11,13 @@ import CoreMotion
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var ballCoordinates: UILabel!
     @IBOutlet weak var coordinates: UILabel!
-    
-    var circle = CircleView()
     weak var blockTimer: Timer?
+    var circle = CircleView()
     
+    let greenPoints: Int = 10
+    let redPoints:Int = -5
+    var userScore: Int = 0
     
     let motionManager: CMMotionManager = CMMotionManager()
     
@@ -27,10 +28,10 @@ class ViewController: UIViewController {
         circle = CircleView(frame: CGRect(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2, width: 40, height: 60))
         circle.backgroundColor = UIColor.clear
         view.addSubview(circle)
-        coordinates.text = "H: \(self.view.bounds.height) - W: \(self.view.bounds.width)"
         
-        blockTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.dropBlock), userInfo: nil, repeats: true)
+        blockTimer = Timer.scheduledTimer(timeInterval: 3 , target: self, selector: #selector(self.dropBlock), userInfo: nil, repeats: true)
         
+        coordinates.text = "\(ScoreBoard.sharedInstance.score)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         motionManager.accelerometerUpdateInterval = 0.1;
+        
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
             if let acceleration = data?.acceleration {
                 let currentX = acceleration.x
@@ -62,10 +64,11 @@ class ViewController: UIViewController {
                     circleY = self.view.bounds.height - 80
                 }
                 
-                self.ballCoordinates.text = "X: \(circleX) Y: \(circleY)"
-                
                 self.circle.moveCircle(x: CGFloat(Double(circleX) + (currentX * 50)), y: CGFloat(Double(circleY) + ((currentY * 50) * -2)))
-                self.setNeedsFocusUpdate()
+                
+                self.lock(obj: self.view.subviews as AnyObject) {
+                    self.detectCollision()
+                }
             }
         }
     }
@@ -93,9 +96,17 @@ class ViewController: UIViewController {
             let yPosition : CGFloat = CGFloat( arc4random_uniform(UInt32(self.view.bounds.height - 100) + 80))
             let maxWidth = self.view.bounds.width
             
-            let coloredSquare = UIView()
-            coloredSquare.frame = CGRect(x: 0 - size, y: yPosition, width: size, height: size)
-            coloredSquare.backgroundColor = arc4random_uniform(200) % 2 == 0 ? UIColor.green: UIColor.red
+            let coloredSquare = BlockView()
+            coloredSquare.frame = CGRect(x: 40, y: yPosition, width: size, height: size)
+            
+            if (arc4random_uniform(200) % 2 == 0) {
+                coloredSquare.backgroundColor =  UIColor.green
+                coloredSquare.tag = self.greenPoints
+            }
+            else {
+                coloredSquare.backgroundColor =  UIColor.red
+                coloredSquare.tag = self.redPoints
+            }
             
             self.view.addSubview(coloredSquare)
             
@@ -108,6 +119,28 @@ class ViewController: UIViewController {
             }
             )
         }
+    }
+    
+    private func detectCollision() {
+        for view in self.view.subviews.lazy.flatMap({ $0 as? BlockView }) {
+            if self.circle.frame.intersects(view.frame) {
+                view.accept(visitor: circle)
+                DispatchQueue.main.async {
+                    self.coordinates.text = "\(ScoreBoard.sharedInstance.score)"
+                }
+                return
+            }
+        }
+    }
+    
+    func lock(obj: AnyObject, blk:() -> ()) {
+        objc_sync_enter(obj)
+        blk()
+        objc_sync_exit(obj)
+    }
+    
+    private func updateScore(points: Int) {
+        userScore += points
     }
 }
 

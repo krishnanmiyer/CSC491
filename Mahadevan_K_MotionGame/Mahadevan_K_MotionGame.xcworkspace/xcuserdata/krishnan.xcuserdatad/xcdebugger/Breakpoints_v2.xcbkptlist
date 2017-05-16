@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mahadevan_K_MotionGame/ViewController.swift"
-            timestampString = "516568333.662068"
+            timestampString = "516597558.670791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113">
+            startingLineNumber = "146"
+            endingLineNumber = "146">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mahadevan_K_MotionGame/ViewController.swift"
-            timestampString = "516568333.662068"
+            timestampString = "516597215.574762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -40,12 +40,153 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mahadevan_K_MotionGame/ViewController.swift"
-            timestampString = "516568333.662068"
+            timestampString = "516597215.574762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mahadevan_K_MotionGame/GameVisitor.swift"
+            timestampString = "516577466.491045"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "GameVisitor"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mahadevan_K_MotionGame/Block.swift"
+            timestampString = "516576378.277995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "BlockView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mahadevan_K_MotionGame.BlockView.__deallocating_deinit"
+                  moduleName = "Mahadevan_K_MotionGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishnan/Source/CSC491/Mahadevan_K_MotionGame/Mahadevan_K_MotionGame/Block.swift"
+                  timestampString = "516577468.524004"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mahadevan_K_MotionGame.BlockView.init (frame : __C.CGRect) -&gt; Mahadevan_K_MotionGame.BlockView"
+                  moduleName = "Mahadevan_K_MotionGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishnan/Source/CSC491/Mahadevan_K_MotionGame/Mahadevan_K_MotionGame/Block.swift"
+                  timestampString = "516577468.526498"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mahadevan_K_MotionGame.BlockView.__allocating_init (frame : __C.CGRect) -&gt; Mahadevan_K_MotionGame.BlockView"
+                  moduleName = "Mahadevan_K_MotionGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishnan/Source/CSC491/Mahadevan_K_MotionGame/Mahadevan_K_MotionGame/Block.swift"
+                  timestampString = "516577468.528995"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mahadevan_K_MotionGame.BlockView.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Mahadevan_K_MotionGame.BlockView&gt;"
+                  moduleName = "Mahadevan_K_MotionGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishnan/Source/CSC491/Mahadevan_K_MotionGame/Mahadevan_K_MotionGame/Block.swift"
+                  timestampString = "516577468.531555"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mahadevan_K_MotionGame.BlockView.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Mahadevan_K_MotionGame.BlockView&gt;"
+                  moduleName = "Mahadevan_K_MotionGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krishnan/Source/CSC491/Mahadevan_K_MotionGame/Mahadevan_K_MotionGame/Block.swift"
+                  timestampString = "516577468.53413"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mahadevan_K_MotionGame/ViewController.swift"
+            timestampString = "516597215.574762"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "dropBlock()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mahadevan_K_MotionGame/CircleView.swift"
+            timestampString = "516594150.518905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "visitBlock(block:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

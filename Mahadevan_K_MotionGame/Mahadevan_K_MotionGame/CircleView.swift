@@ -2,14 +2,14 @@
 //  CircleView.swift
 //  Mahadevan_K_MotionGame
 //
-//  Created by Krishnan Mahadevan on 5/13/17.
+//  Created by Krishnan Mahadevan on 5/4/17.
 //  Copyright © 2017 Krishnan Mahadevan. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CircleView: UIView {
+class CircleView: GameObject {
     
     var circle = UIView()
     var isAnimating = false
@@ -70,5 +70,19 @@ class CircleView: UIView {
         get {
             return frame.origin.y;
         }
+    }
+    
+    override func accept(visitor other: IVisitor ) {
+        other.visitCircle(circle: self)
+    }
+    
+    override func visitCircle(circle: CircleView) {
+        print("Collided with  Circle - 1")
+    }
+    
+    override func visitBlock(block: BlockView) {
+        print("Collided with Circle - 2")
+        ScoreBoard.sharedInstance.score += block.tag
+        block.removeFromSuperview()
     }
 }
