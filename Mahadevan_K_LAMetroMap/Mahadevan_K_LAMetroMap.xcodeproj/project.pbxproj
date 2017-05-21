@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034FC6491ED16EEE004E8832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC6481ED16EEE004E8832 /* AppDelegate.swift */; };
+		034FC64E1ED16EEE004E8832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034FC64C1ED16EEE004E8832 /* Main.storyboard */; };
+		034FC6501ED16EEE004E8832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034FC64F1ED16EEE004E8832 /* Assets.xcassets */; };
+		034FC6531ED16EEE004E8832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034FC6511ED16EEE004E8832 /* LaunchScreen.storyboard */; };
+		034FC6641ED17295004E8832 /* MetroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC65C1ED17295004E8832 /* MetroService.swift */; };
+		034FC6651ED17295004E8832 /* RealTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC65D1ED17295004E8832 /* RealTimeModel.swift */; };
+		034FC6661ED17295004E8832 /* RealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC65E1ED17295004E8832 /* RealTimeViewController.swift */; };
+		034FC6671ED17295004E8832 /* RouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC65F1ED17295004E8832 /* RouteModel.swift */; };
+		034FC6681ED17295004E8832 /* RoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC6601ED17295004E8832 /* RoutesViewController.swift */; };
+		034FC6691ED17295004E8832 /* StopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC6611ED17295004E8832 /* StopModel.swift */; };
+		034FC66A1ED17295004E8832 /* StopsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC6621ED17295004E8832 /* StopsNavigationController.swift */; };
+		034FC66B1ED17295004E8832 /* StopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034FC6631ED17295004E8832 /* StopsViewController.swift */; };
+		287720A1F46C545B299B966C /* Pods_Mahadevan_K_LAMetroMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 900DE1BC71569830C4BF372D /* Pods_Mahadevan_K_LAMetroMap.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		034FC6451ED16EEE004E8832 /* Mahadevan_K_LAMetroMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mahadevan_K_LAMetroMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		034FC6481ED16EEE004E8832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		034FC64D1ED16EEE004E8832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		034FC64F1ED16EEE004E8832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		034FC6521ED16EEE004E8832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		034FC6541ED16EEE004E8832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034FC65C1ED17295004E8832 /* MetroService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroService.swift; sourceTree = "<group>"; };
+		034FC65D1ED17295004E8832 /* RealTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeModel.swift; sourceTree = "<group>"; };
+		034FC65E1ED17295004E8832 /* RealTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeViewController.swift; sourceTree = "<group>"; };
+		034FC65F1ED17295004E8832 /* RouteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteModel.swift; sourceTree = "<group>"; };
+		034FC6601ED17295004E8832 /* RoutesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutesViewController.swift; sourceTree = "<group>"; };
+		034FC6611ED17295004E8832 /* StopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopModel.swift; sourceTree = "<group>"; };
+		034FC6621ED17295004E8832 /* StopsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsNavigationController.swift; sourceTree = "<group>"; };
+		034FC6631ED17295004E8832 /* StopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsViewController.swift; sourceTree = "<group>"; };
+		43B37BC9E1A36283174A773A /* Pods-Mahadevan_K_LAMetroMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_LAMetroMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_LAMetroMap/Pods-Mahadevan_K_LAMetroMap.debug.xcconfig"; sourceTree = "<group>"; };
+		447D613BDB88FDAA584A3B99 /* Pods-Mahadevan_K_LAMetroMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_LAMetroMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_LAMetroMap/Pods-Mahadevan_K_LAMetroMap.release.xcconfig"; sourceTree = "<group>"; };
+		900DE1BC71569830C4BF372D /* Pods_Mahadevan_K_LAMetroMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mahadevan_K_LAMetroMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		034FC6421ED16EEE004E8832 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287720A1F46C545B299B966C /* Pods_Mahadevan_K_LAMetroMap.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034FC63C1ED16EEE004E8832 = {
+			isa = PBXGroup;
+			children = (
+				034FC6471ED16EEE004E8832 /* Mahadevan_K_LAMetroMap */,
+				034FC6461ED16EEE004E8832 /* Products */,
+				5586579AAAE593A525683845 /* Pods */,
+				9EC0D99E32C99B6EDD70FDE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		034FC6461ED16EEE004E8832 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				034FC6451ED16EEE004E8832 /* Mahadevan_K_LAMetroMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		034FC6471ED16EEE004E8832 /* Mahadevan_K_LAMetroMap */ = {
+			isa = PBXGroup;
+			children = (
+				034FC66E1ED17B18004E8832 /* Controllers */,
+				034FC66D1ED17B03004E8832 /* Services */,
+				034FC66C1ED17ABE004E8832 /* Models */,
+				034FC6481ED16EEE004E8832 /* AppDelegate.swift */,
+				034FC64C1ED16EEE004E8832 /* Main.storyboard */,
+				034FC64F1ED16EEE004E8832 /* Assets.xcassets */,
+				034FC6511ED16EEE004E8832 /* LaunchScreen.storyboard */,
+				034FC6541ED16EEE004E8832 /* Info.plist */,
+			);
+			path = Mahadevan_K_LAMetroMap;
+			sourceTree = "<group>";
+		};
+		034FC66C1ED17ABE004E8832 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				034FC65F1ED17295004E8832 /* RouteModel.swift */,
+				034FC65D1ED17295004E8832 /* RealTimeModel.swift */,
+				034FC6611ED17295004E8832 /* StopModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		034FC66D1ED17B03004E8832 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				034FC65C1ED17295004E8832 /* MetroService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		034FC66E1ED17B18004E8832 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				034FC65E1ED17295004E8832 /* RealTimeViewController.swift */,
+				034FC6601ED17295004E8832 /* RoutesViewController.swift */,
+				034FC6621ED17295004E8832 /* StopsNavigationController.swift */,
+				034FC6631ED17295004E8832 /* StopsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5586579AAAE593A525683845 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43B37BC9E1A36283174A773A /* Pods-Mahadevan_K_LAMetroMap.debug.xcconfig */,
+				447D613BDB88FDAA584A3B99 /* Pods-Mahadevan_K_LAMetroMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9EC0D99E32C99B6EDD70FDE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				900DE1BC71569830C4BF372D /* Pods_Mahadevan_K_LAMetroMap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		034FC6441ED16EEE004E8832 /* Mahadevan_K_LAMetroMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034FC6571ED16EEE004E8832 /* Build configuration list for PBXNativeTarget "Mahadevan_K_LAMetroMap" */;
+			buildPhases = (
+				1222ECCDB27E07D3D7742989 /* [CP] Check Pods Manifest.lock */,
+				034FC6411ED16EEE004E8832 /* Sources */,
+				034FC6421ED16EEE004E8832 /* Frameworks */,
+				034FC6431ED16EEE004E8832 /* Resources */,
+				B27C4015FDC8F6C32108FE79 /* [CP] Embed Pods Frameworks */,
+				5067A685F1673C48953A9D7B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mahadevan_K_LAMetroMap;
+			productName = Mahadevan_K_LAMetroMap;
+			productReference = 034FC6451ED16EEE004E8832 /* Mahadevan_K_LAMetroMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		034FC63D1ED16EEE004E8832 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Krishnan Mahadevan";
+				TargetAttributes = {
+					034FC6441ED16EEE004E8832 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MQ79U7S5FQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 034FC6401ED16EEE004E8832 /* Build configuration list for PBXProject "Mahadevan_K_LAMetroMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 034FC63C1ED16EEE004E8832;
+			productRefGroup = 034FC6461ED16EEE004E8832 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				034FC6441ED16EEE004E8832 /* Mahadevan_K_LAMetroMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		034FC6431ED16EEE004E8832 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034FC6531ED16EEE004E8832 /* LaunchScreen.storyboard in Resources */,
+				034FC6501ED16EEE004E8832 /* Assets.xcassets in Resources */,
+				034FC64E1ED16EEE004E8832 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1222ECCDB27E07D3D7742989 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5067A685F1673C48953A9D7B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mahadevan_K_LAMetroMap/Pods-Mahadevan_K_LAMetroMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B27C4015FDC8F6C32108FE79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mahadevan_K_LAMetroMap/Pods-Mahadevan_K_LAMetroMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		034FC6411ED16EEE004E8832 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034FC6641ED17295004E8832 /* MetroService.swift in Sources */,
+				034FC6691ED17295004E8832 /* StopModel.swift in Sources */,
+				034FC6651ED17295004E8832 /* RealTimeModel.swift in Sources */,
+				034FC66A1ED17295004E8832 /* StopsNavigationController.swift in Sources */,
+				034FC6671ED17295004E8832 /* RouteModel.swift in Sources */,
+				034FC6491ED16EEE004E8832 /* AppDelegate.swift in Sources */,
+				034FC6661ED17295004E8832 /* RealTimeViewController.swift in Sources */,
+				034FC66B1ED17295004E8832 /* StopsViewController.swift in Sources */,
+				034FC6681ED17295004E8832 /* RoutesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		034FC64C1ED16EEE004E8832 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034FC64D1ED16EEE004E8832 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		034FC6511ED16EEE004E8832 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034FC6521ED16EEE004E8832 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		034FC6551ED16EEE004E8832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		034FC6561ED16EEE004E8832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		034FC6581ED16EEE004E8832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43B37BC9E1A36283174A773A /* Pods-Mahadevan_K_LAMetroMap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MQ79U7S5FQ;
+				INFOPLIST_FILE = Mahadevan_K_LAMetroMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Personal-Project.Mahadevan-K-LAMetroMap";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		034FC6591ED16EEE004E8832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 447D613BDB88FDAA584A3B99 /* Pods-Mahadevan_K_LAMetroMap.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MQ79U7S5FQ;
+				INFOPLIST_FILE = Mahadevan_K_LAMetroMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Personal-Project.Mahadevan-K-LAMetroMap";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		034FC6401ED16EEE004E8832 /* Build configuration list for PBXProject "Mahadevan_K_LAMetroMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034FC6551ED16EEE004E8832 /* Debug */,
+				034FC6561ED16EEE004E8832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034FC6571ED16EEE004E8832 /* Build configuration list for PBXNativeTarget "Mahadevan_K_LAMetroMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034FC6581ED16EEE004E8832 /* Debug */,
+				034FC6591ED16EEE004E8832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 034FC63D1ED16EEE004E8832 /* Project object */;
+}
