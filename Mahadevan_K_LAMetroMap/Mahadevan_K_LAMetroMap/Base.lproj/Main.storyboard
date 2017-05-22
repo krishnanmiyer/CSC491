@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bFV-Lk-H4B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bFV-Lk-H4B">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Routes-->
         <scene sceneID="feC-fR-jho">
             <objects>
-                <tableViewController title="Routes" id="pKG-02-LRt" customClass="RoutesViewController" customModule="Mahadevan_K_LAMetro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Routes" id="pKG-02-LRt" customClass="RoutesViewController" customModule="Mahadevan_K_LAMetroMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qMv-WQ-zOQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,13 @@
                             <outlet property="delegate" destination="pKG-02-LRt" id="2NJ-4A-aCU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="LA Metro Bus Routes" id="cvy-HX-cbl"/>
+                    <navigationItem key="navigationItem" title="LA Metro Routes" id="cvy-HX-cbl">
+                        <barButtonItem key="rightBarButtonItem" title="Locate Me" id="s2O-b0-93x">
+                            <connections>
+                                <segue destination="jfd-sg-7VZ" kind="show" id="NSG-BY-Gfs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ih-39-2dD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +77,7 @@
         <!--Stops-->
         <scene sceneID="scL-gC-sQT">
             <objects>
-                <tableViewController title="Stops" id="5w1-Go-brs" customClass="StopsViewController" customModule="Mahadevan_K_LAMetro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Stops" id="5w1-Go-brs" customClass="StopsViewController" customModule="Mahadevan_K_LAMetroMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0dK-Sg-XaJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +135,7 @@
         <!--Real Time View Controller-->
         <scene sceneID="N7B-CB-hM3">
             <objects>
-                <tableViewController id="5Cg-Tz-ktU" customClass="RealTimeViewController" customModule="Mahadevan_K_LAMetro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5Cg-Tz-ktU" customClass="RealTimeViewController" customModule="Mahadevan_K_LAMetroMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="riA-V8-Bp7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +153,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="flK-uK-WxA">
-                                            <rect key="frame" x="16" y="10" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -171,7 +177,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sP1-fz-gwv">
-                                            <rect key="frame" x="16" y="0.0" width="344" height="39.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -193,6 +199,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6f0-Om-A1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2373.5999999999999" y="115.59220389805098"/>
+        </scene>
+        <!--Locate Me-->
+        <scene sceneID="yVc-kl-3sB">
+            <objects>
+                <viewController title="What's near me?" id="jfd-sg-7VZ" userLabel="Locate Me" customClass="LocateMeController" customModule="Mahadevan_K_LAMetroMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1dy-WH-jr9"/>
+                        <viewControllerLayoutGuide type="bottom" id="kuQ-59-APA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gz3-9k-6M0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6HU-GB-Rix">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjd-Sj-139">
+                                <rect key="frame" x="0.0" y="667" width="161" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="sqc-f7-ylP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6HU-GB-Rix" secondAttribute="trailing" id="ErB-Je-HNA"/>
+                            <constraint firstItem="6HU-GB-Rix" firstAttribute="leading" secondItem="gz3-9k-6M0" secondAttribute="leading" id="Wx3-yZ-VUb"/>
+                            <constraint firstItem="kuQ-59-APA" firstAttribute="top" secondItem="6HU-GB-Rix" secondAttribute="bottom" id="dUg-W0-SUV"/>
+                            <constraint firstItem="vjd-Sj-139" firstAttribute="leading" secondItem="gz3-9k-6M0" secondAttribute="leading" id="uDk-1a-0qS"/>
+                            <constraint firstItem="6HU-GB-Rix" firstAttribute="top" secondItem="1dy-WH-jr9" secondAttribute="bottom" id="xlq-pN-VQ4"/>
+                            <constraint firstItem="kuQ-59-APA" firstAttribute="top" secondItem="vjd-Sj-139" secondAttribute="bottom" id="z8r-je-cbt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapMessages" destination="vjd-Sj-139" id="fEh-eL-F8W"/>
+                        <outlet property="mapView" destination="6HU-GB-Rix" id="uN1-BJ-bV0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bhb-LS-OI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1229.5999999999999" y="873.91304347826099"/>
         </scene>
         <!--Route Navigation-->
         <scene sceneID="Mn6-UH-xiO">

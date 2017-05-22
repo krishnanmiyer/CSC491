@@ -10,7 +10,13 @@ import Foundation
 import SwiftyJSON
 
 public class MetroService {
+    
+    static var allRoutes:[RouteModel] = []
 
+    static var allStops:[StopModel] = []
+    
+    private static let maxDistance = 10.00
+    
     /**
      Returns Metro Bus Routes from LA Metro API Service.
 
@@ -164,5 +170,17 @@ public class MetroService {
             }
             completion(mapImage)
         }.resume()
+    }
+}
+
+extension Double {
+    var degreesToRadians: Double { return Double(self) * .pi / 180 }
+}
+
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }

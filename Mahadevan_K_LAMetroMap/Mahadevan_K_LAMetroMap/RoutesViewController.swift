@@ -63,6 +63,7 @@ class RoutesViewController: UITableViewController {
                 self.routes = routeData
                 self.dataAvailable = true
                 self.tableView.reloadData()
+                MetroService.allRoutes.append(contentsOf: routeData)
             }
         }
     }

@@ -21,4 +21,13 @@ public struct RealTimeModel {
         self.routeId = 0
         self.minutes = 0.0
     }
+    
+    public func toString() -> String {
+        if (seconds > 59) {
+            return "Route: \(routeId): \(Int(minutes)) minute(s)"
+        }
+        else {
+            return "Route: \(routeId): \(Int(seconds)) second(s)"
+        }
+    }
 }
