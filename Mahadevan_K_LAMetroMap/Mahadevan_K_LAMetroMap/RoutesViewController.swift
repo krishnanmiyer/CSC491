@@ -55,6 +55,10 @@ class RoutesViewController: UITableViewController {
                 detail.route = routes[indexPath.row]
             }
         }
+        
+        if let locate = segue.destination as? LocateMeController {
+            locate.routes = self.routes.map { $0.id }
+        }
     }
     
     private func loadData() {
@@ -63,7 +67,6 @@ class RoutesViewController: UITableViewController {
                 self.routes = routeData
                 self.dataAvailable = true
                 self.tableView.reloadData()
-                MetroService.allRoutes.append(contentsOf: routeData)
             }
         }
     }

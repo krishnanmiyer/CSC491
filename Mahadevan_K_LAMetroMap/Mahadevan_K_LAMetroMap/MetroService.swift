@@ -11,11 +11,7 @@ import SwiftyJSON
 
 public class MetroService {
     
-    static var allRoutes:[RouteModel] = []
-
-    static var allStops:[StopModel] = []
-    
-    private static let maxDistance = 10.00
+    static var stops:[StopModel] = []
     
     /**
      Returns Metro Bus Routes from LA Metro API Service.
@@ -90,6 +86,29 @@ public class MetroService {
             }
             completion(stops)
             }.resume()
+    }
+    
+
+    /**
+     Returns Metro Bus Stops in sequence for a Route from LA Metro API Service.
+     
+     - parameter routeId:  Int Route identifier.
+     
+     - returns: An Array of RoutModel instance.
+     */
+    public static func getStopsInRoutes(routes: [Int], completion: @escaping ([StopModel]) -> Void) {
+        var stops:[StopModel] = []
+        var count:Int = 0
+        
+        for routeId in routes {
+            getStops(routeId) { data in
+                stops.append(contentsOf: data)
+                count += 1
+                if (count >= routes.count) {
+                    completion(stops)
+                }
+            }
+        }
     }
     
     /**

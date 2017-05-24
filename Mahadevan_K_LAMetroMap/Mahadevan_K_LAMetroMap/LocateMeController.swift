@@ -15,22 +15,24 @@ class LocateMeController: UIViewController, LocationServiceDelegate {
     @IBOutlet weak var mapMessages: UILabel!
     @IBOutlet weak var mapView: MKMapView!
 
-    var stops:[StopModel] = []
-    let maxDistance = 2.00
     private var applied = CLLocationCoordinate2D()
+
     var dataAvailable = false
-    var maxData:Int = 20666
+    var routes:[Int] = []
+    
+    let maxDistance = 2.00
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if (MetroService.allStops.count > 1) {
-            stops = MetroService.allStops
-            dataAvailable = true
+        if (MetroService.stops.count < 1) {
+            LoadStops()
         }
         else {
-            preLoadStops()
+            dataAvailable = true
+            self.updatePins(self.applied.latitude, self.applied.longitude)
         }
+        
         LocationService.sharedInstance.delegate = self
         mapView.showsUserLocation = true
     }
@@ -49,23 +51,17 @@ class LocateMeController: UIViewController, LocationServiceDelegate {
         LocationService.sharedInstance.stopUpdatingLocation()
     }
 
-    private func preLoadStops() {
+    private func LoadStops() {
         mapMessages.text = "Loading data..."
         
         let queue = DispatchQueue.global(qos: .userInteractive)
         
         queue.async {
-            for route in MetroService.allRoutes {
-                MetroService.getStops(route.id) { stopsData in
-                    self.stops.append(contentsOf: stopsData)
-                    
-                    if (self.stops.count >= self.maxData) {
-                        queue.async {
-                            MetroService.allStops.append(contentsOf: self.stops)
-                            self.updatePins(self.applied.latitude, self.applied.longitude)
-                        }
-                    }
-                }
+            MetroService.getStopsInRoutes(routes: self.routes) { result in
+                MetroService.stops.append(contentsOf: result)
+
+                self.dataAvailable = true
+                self.updatePins(self.applied.latitude, self.applied.longitude)
             }
         }
     }
@@ -75,18 +71,19 @@ class LocateMeController: UIViewController, LocationServiceDelegate {
             applied = currentLocation.coordinate
         }
         else {
-            let distance = computeDistance(currentLocation.coordinate.latitude, currentLocation.coordinate.latitude, applied.latitude, applied.longitude)
+            let distance = computeDistance(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, applied.latitude, applied.longitude)
             
             //minimum distance when map has to be updated
-            if distance < 10000 {
+            if distance <= 0.5 {
                 return
             }
             
             if (dataAvailable) {
                 updatePins(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
+                applied = currentLocation.coordinate
             }
         }
-        mapView.setRegion(MKCoordinateRegion(center: currentLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: true)
+        mapView.setRegion(MKCoordinateRegion(center: currentLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
     }
     
     func traceLocationError(error: Error) {
@@ -109,14 +106,23 @@ class LocateMeController: UIViewController, LocationServiceDelegate {
             var coordinates = CLLocationCoordinate2D()
             coordinates.latitude = stop.location.latitude
             coordinates.longitude = stop.location.longitude
-
-            DispatchQueue.main.async {
-                self.mapView.addAnnotation(PlaceAnnotationModel(coordinates, "\(stop.displayName) (\(stop.distance))"))
+            
+            MetroService.getRealTime(stop.id) { realTimeData in
+                let sorted = realTimeData.sorted(by: { $0.minutes < $1.minutes }).first
+                
+                DispatchQueue.main.async {
+                    self.mapView.addAnnotation(PlaceAnnotationModel(coordinates, "\(stop.displayName) (\(stop.distance))", sorted?.toString()))
+                }
             }
         }
-        
+                
         DispatchQueue.main.async {
-            self.mapMessages.text = "Update complete"
+            if let first = closest.sorted(by: { $0.distance > $1.distance }).last {
+                self.mapMessages.text = "Nearest Metro: \(first.displayName) (\(first.distance)M)"
+            }
+            else {
+                self.mapMessages.text = ""
+            }
         }
     }
     
@@ -129,7 +135,7 @@ class LocateMeController: UIViewController, LocationServiceDelegate {
         
         //compute distance and find closest stops depending upon distance
         
-        for stop in stops {
+        for stop in MetroService.stops {
             //do not add if stop exists (due to multiple routes)
             
             if !closestStops.contains(where: {$0.displayName == stop.displayName}) {

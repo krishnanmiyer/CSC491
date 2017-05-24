@@ -65,7 +65,7 @@
                     <navigationItem key="navigationItem" title="LA Metro Routes" id="cvy-HX-cbl">
                         <barButtonItem key="rightBarButtonItem" title="Locate Me" id="s2O-b0-93x">
                             <connections>
-                                <segue destination="jfd-sg-7VZ" kind="show" id="NSG-BY-Gfs"/>
+                                <segue destination="jfd-sg-7VZ" kind="show" identifier="nearMe" id="NSG-BY-Gfs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -216,11 +216,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjd-Sj-139">
-                                <rect key="frame" x="0.0" y="667" width="161" height="0.0"/>
+                                <rect key="frame" x="0.0" y="64" width="294" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="sqc-f7-ylP"/>
+                                    <constraint firstAttribute="width" constant="294" id="r2W-3o-rnS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -229,10 +229,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6HU-GB-Rix" secondAttribute="trailing" id="ErB-Je-HNA"/>
                             <constraint firstItem="6HU-GB-Rix" firstAttribute="leading" secondItem="gz3-9k-6M0" secondAttribute="leading" id="Wx3-yZ-VUb"/>
-                            <constraint firstItem="kuQ-59-APA" firstAttribute="top" secondItem="6HU-GB-Rix" secondAttribute="bottom" id="dUg-W0-SUV"/>
-                            <constraint firstItem="vjd-Sj-139" firstAttribute="leading" secondItem="gz3-9k-6M0" secondAttribute="leading" id="uDk-1a-0qS"/>
+                            <constraint firstItem="vjd-Sj-139" firstAttribute="leading" secondItem="gz3-9k-6M0" secondAttribute="leading" id="e3q-9B-xqw"/>
+                            <constraint firstItem="vjd-Sj-139" firstAttribute="top" secondItem="1dy-WH-jr9" secondAttribute="bottom" id="euy-VL-Sgg"/>
+                            <constraint firstItem="6HU-GB-Rix" firstAttribute="bottom" secondItem="kuQ-59-APA" secondAttribute="top" id="wu2-1h-wbP"/>
                             <constraint firstItem="6HU-GB-Rix" firstAttribute="top" secondItem="1dy-WH-jr9" secondAttribute="bottom" id="xlq-pN-VQ4"/>
-                            <constraint firstItem="kuQ-59-APA" firstAttribute="top" secondItem="vjd-Sj-139" secondAttribute="bottom" id="z8r-je-cbt"/>
                         </constraints>
                     </view>
                     <connections>
