@@ -13,6 +13,8 @@
 		03B25B0A1EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B081EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant.xcdatamodeld */; };
 		03B25B0C1EDCA87E00539C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B25B0B1EDCA87E00539C37 /* Assets.xcassets */; };
 		03B25B0F1EDCA87E00539C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B25B0D1EDCA87E00539C37 /* LaunchScreen.storyboard */; };
+		03B25B171EDCB54700539C37 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B161EDCB54700539C37 /* ActivityViewController.swift */; };
+		03B25B191EDCD3B700539C37 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B181EDCD3B700539C37 /* SettingsViewController.swift */; };
 		AD86CEEAB605B835066FE345 /* Pods_Mahadevan_K_IntelligentAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA63AB1FB8EF0A59FE7251 /* Pods_Mahadevan_K_IntelligentAssistant.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		03B25B0B1EDCA87E00539C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03B25B0E1EDCA87E00539C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03B25B101EDCA87E00539C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03B25B161EDCB54700539C37 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		03B25B181EDCD3B700539C37 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4ED4CFA796DCAE3AE4D58194 /* Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_IntelligentAssistant/Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		56AA63AB1FB8EF0A59FE7251 /* Pods_Mahadevan_K_IntelligentAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mahadevan_K_IntelligentAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1968C43E12C13C2C64C8450 /* Pods-Mahadevan_K_IntelligentAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_IntelligentAssistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_IntelligentAssistant/Pods-Mahadevan_K_IntelligentAssistant.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				03B25B0D1EDCA87E00539C37 /* LaunchScreen.storyboard */,
 				03B25B101EDCA87E00539C37 /* Info.plist */,
 				03B25B081EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant.xcdatamodeld */,
+				03B25B161EDCB54700539C37 /* ActivityViewController.swift */,
+				03B25B181EDCD3B700539C37 /* SettingsViewController.swift */,
 			);
 			path = Mahadevan_K_IntelligentAssistant;
 			sourceTree = "<group>";
@@ -216,8 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B25B0A1EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant.xcdatamodeld in Sources */,
+				03B25B191EDCD3B700539C37 /* SettingsViewController.swift in Sources */,
 				03B25B041EDCA87E00539C37 /* ViewController.swift in Sources */,
 				03B25B021EDCA87E00539C37 /* AppDelegate.swift in Sources */,
+				03B25B171EDCB54700539C37 /* ActivityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +393,7 @@
 				03B25B151EDCA87E00539C37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
