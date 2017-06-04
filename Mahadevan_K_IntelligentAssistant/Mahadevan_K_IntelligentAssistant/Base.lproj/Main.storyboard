@@ -10,24 +10,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Developer-->
-        <scene sceneID="cuD-HB-dHw">
+        <!--Developer Mode-->
+        <scene sceneID="h0Y-Mt-cAO">
             <objects>
-                <viewController title="Developer" id="FvD-cY-q0B" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="58L-yK-bL0"/>
-                        <viewControllerLayoutGuide type="bottom" id="fLb-Fm-ShX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aIn-2G-4Ss">
+                <tableViewController title="Developer Mode" id="khn-Zc-Npf" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v1l-vF-fqV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Developer Mode" id="hC3-BT-QrN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cOs-zm-0zC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="motionData" textLabel="ce8-mM-hnG" detailTextLabel="vVW-rC-Uno" style="IBUITableViewCellStyleValue1" id="omb-gP-9VC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="omb-gP-9VC" id="VxR-XY-had">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ce8-mM-hnG">
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vVW-rC-Uno">
+                                            <rect key="frame" x="301" y="12" width="59" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="khn-Zc-Npf" id="BNW-2b-aZb"/>
+                            <outlet property="delegate" destination="khn-Zc-Npf" id="LU9-QD-7gr"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Developer Mode" id="bNo-aP-cYX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rP4-Ws-49Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="827"/>
+            <point key="canvasLocation" x="-1" y="853"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bq4-Wt-j7F">
@@ -41,7 +67,7 @@
                     <connections>
                         <segue destination="sar-tf-RXy" kind="relationship" relationship="viewControllers" id="c3I-If-rKU"/>
                         <segue destination="i9J-DU-SZq" kind="relationship" relationship="viewControllers" id="woC-04-CJM"/>
-                        <segue destination="FvD-cY-q0B" kind="relationship" relationship="viewControllers" id="opb-ss-GUR"/>
+                        <segue destination="khn-Zc-Npf" kind="relationship" relationship="viewControllers" id="aRI-M2-cLv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBc-C2-c9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -120,10 +146,7 @@
                                 <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                             </textAttributes>
                             <items>
-                                <navigationItem title="Settings" id="Psu-xo-Yvt">
-                                    <barButtonItem key="leftBarButtonItem" title="Cancel" id="2Ri-Vf-8IJ"/>
-                                    <barButtonItem key="rightBarButtonItem" title="Save" id="Bvc-Tg-VgC"/>
-                                </navigationItem>
+                                <navigationItem title="Settings" id="Psu-xo-Yvt"/>
                             </items>
                         </navigationBar>
                         <sections>

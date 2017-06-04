@@ -15,6 +15,13 @@
 		03B25B0F1EDCA87E00539C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B25B0D1EDCA87E00539C37 /* LaunchScreen.storyboard */; };
 		03B25B171EDCB54700539C37 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B161EDCB54700539C37 /* ActivityViewController.swift */; };
 		03B25B191EDCD3B700539C37 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B181EDCD3B700539C37 /* SettingsViewController.swift */; };
+		03B25B1B1EE46C7900539C37 /* IntelligentAssistantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B1A1EE46C7900539C37 /* IntelligentAssistantService.swift */; };
+		03B25B201EE46D9E00539C37 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B1F1EE46D9E00539C37 /* SettingsModel.swift */; };
+		03B25B221EE46DC500539C37 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B211EE46DC500539C37 /* ActivityModel.swift */; };
+		03B25B241EE46DF200539C37 /* MotionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B231EE46DF200539C37 /* MotionDataModel.swift */; };
+		03B25B261EE4781200539C37 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B25B251EE4781200539C37 /* CoreData.framework */; };
+		03B25B2C1EE48AF700539C37 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B2B1EE48AF700539C37 /* DataService.swift */; };
+		03B25B2F1EE4A43D00539C37 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B2E1EE4A43D00539C37 /* DateUtil.swift */; };
 		AD86CEEAB605B835066FE345 /* Pods_Mahadevan_K_IntelligentAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA63AB1FB8EF0A59FE7251 /* Pods_Mahadevan_K_IntelligentAssistant.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +36,13 @@
 		03B25B101EDCA87E00539C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03B25B161EDCB54700539C37 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		03B25B181EDCD3B700539C37 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		03B25B1A1EE46C7900539C37 /* IntelligentAssistantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntelligentAssistantService.swift; sourceTree = "<group>"; };
+		03B25B1F1EE46D9E00539C37 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		03B25B211EE46DC500539C37 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		03B25B231EE46DF200539C37 /* MotionDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionDataModel.swift; sourceTree = "<group>"; };
+		03B25B251EE4781200539C37 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		03B25B2B1EE48AF700539C37 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		03B25B2E1EE4A43D00539C37 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		4ED4CFA796DCAE3AE4D58194 /* Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_IntelligentAssistant/Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		56AA63AB1FB8EF0A59FE7251 /* Pods_Mahadevan_K_IntelligentAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mahadevan_K_IntelligentAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1968C43E12C13C2C64C8450 /* Pods-Mahadevan_K_IntelligentAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_IntelligentAssistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_IntelligentAssistant/Pods-Mahadevan_K_IntelligentAssistant.release.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03B25B261EE4781200539C37 /* CoreData.framework in Frameworks */,
 				AD86CEEAB605B835066FE345 /* Pods_Mahadevan_K_IntelligentAssistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,17 +82,55 @@
 		03B25B001EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				03B25B1E1EE46D5700539C37 /* Model */,
+				03B25B1D1EE46D3700539C37 /* Controller */,
+				03B25B1C1EE46D1B00539C37 /* Service */,
+				03B25B2D1EE4A41800539C37 /* Utils */,
 				03B25B011EDCA87E00539C37 /* AppDelegate.swift */,
-				03B25B031EDCA87E00539C37 /* ViewController.swift */,
 				03B25B051EDCA87E00539C37 /* Main.storyboard */,
 				03B25B0B1EDCA87E00539C37 /* Assets.xcassets */,
 				03B25B0D1EDCA87E00539C37 /* LaunchScreen.storyboard */,
 				03B25B101EDCA87E00539C37 /* Info.plist */,
 				03B25B081EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant.xcdatamodeld */,
+			);
+			path = Mahadevan_K_IntelligentAssistant;
+			sourceTree = "<group>";
+		};
+		03B25B1C1EE46D1B00539C37 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				03B25B1A1EE46C7900539C37 /* IntelligentAssistantService.swift */,
+				03B25B2B1EE48AF700539C37 /* DataService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		03B25B1D1EE46D3700539C37 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03B25B031EDCA87E00539C37 /* ViewController.swift */,
 				03B25B161EDCB54700539C37 /* ActivityViewController.swift */,
 				03B25B181EDCD3B700539C37 /* SettingsViewController.swift */,
 			);
-			path = Mahadevan_K_IntelligentAssistant;
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		03B25B1E1EE46D5700539C37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03B25B1F1EE46D9E00539C37 /* SettingsModel.swift */,
+				03B25B211EE46DC500539C37 /* ActivityModel.swift */,
+				03B25B231EE46DF200539C37 /* MotionDataModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		03B25B2D1EE4A41800539C37 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				03B25B2E1EE4A43D00539C37 /* DateUtil.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		6AE0B5048721121855839503 /* Pods */ = {
@@ -92,6 +145,7 @@
 		843A0EAD213D3AE48B834A98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03B25B251EE4781200539C37 /* CoreData.framework */,
 				56AA63AB1FB8EF0A59FE7251 /* Pods_Mahadevan_K_IntelligentAssistant.framework */,
 			);
 			name = Frameworks;
@@ -134,6 +188,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = MQ79U7S5FQ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -222,10 +281,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B25B0A1EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant.xcdatamodeld in Sources */,
+				03B25B2F1EE4A43D00539C37 /* DateUtil.swift in Sources */,
 				03B25B191EDCD3B700539C37 /* SettingsViewController.swift in Sources */,
 				03B25B041EDCA87E00539C37 /* ViewController.swift in Sources */,
+				03B25B241EE46DF200539C37 /* MotionDataModel.swift in Sources */,
 				03B25B021EDCA87E00539C37 /* AppDelegate.swift in Sources */,
+				03B25B221EE46DC500539C37 /* ActivityModel.swift in Sources */,
+				03B25B1B1EE46C7900539C37 /* IntelligentAssistantService.swift in Sources */,
+				03B25B201EE46D9E00539C37 /* SettingsModel.swift in Sources */,
 				03B25B171EDCB54700539C37 /* ActivityViewController.swift in Sources */,
+				03B25B2C1EE48AF700539C37 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
