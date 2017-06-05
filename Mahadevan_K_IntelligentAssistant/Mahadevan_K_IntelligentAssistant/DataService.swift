@@ -93,7 +93,7 @@ class DataService {
         }
     }
 
-    static func saveMotionData(activityId: Int16, start: Date, end: Date, latitude: Float, longitude: Float) {
+    static func saveMotionData(activityId: Int16, start: Date, latitude: Float, longitude: Float, steps: Int32) {
        
         do {
             let context = getContext()
@@ -102,9 +102,9 @@ class DataService {
             let profile = NSManagedObject(entity: entity, insertInto: context)
             profile.setValue(activityId, forKeyPath: "activityId")
             profile.setValue(start, forKeyPath: "start")
-            profile.setValue(end, forKeyPath: "end")
             profile.setValue(latitude, forKeyPath: "latitude")
             profile.setValue(longitude, forKeyPath: "longitude")
+            profile.setValue(steps, forKeyPath: "steps")
 
             try context.save()
         } catch let error as NSError {

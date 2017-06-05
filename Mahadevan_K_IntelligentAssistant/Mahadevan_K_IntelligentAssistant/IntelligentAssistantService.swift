@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreMotion
 
 class IntelligentAssistantService {
 
@@ -33,7 +34,7 @@ class IntelligentAssistantService {
     
     func getMotionDataAll() -> [MotionDataModel] {
         
-        let data = DataService.getMotionData()
+        let data = DataService.getMotionData().sorted(by: { $0.start?.compare($1.start! as Date) ==  .orderedDescending})
         
         var motions:[MotionDataModel] = []
         
@@ -42,8 +43,8 @@ class IntelligentAssistantService {
                 let motion = MotionDataModel(activityId: rec.activityId
                     , activityName: activity
                     , start: rec.start! as Date
-                    , end: rec.end! as Date
-                    , location: (rec.latitude, rec.longitude))
+                    , location: (rec.latitude, rec.longitude)
+                    , steps: rec.steps)
                 
                 motions.append(motion)
             }
@@ -52,14 +53,14 @@ class IntelligentAssistantService {
     }
     
     func saveMotionData(motion: MotionDataModel) {
-        DataService.saveMotionData(activityId: motion.activityId, start: motion.start, end: motion.end, latitude: motion.location.0, longitude: motion.location.1)
+        DataService.saveMotionData(activityId: motion.activityId, start: motion.start, latitude: motion.location.0, longitude: motion.location.1, steps: motion.steps)
     }
     
-    func cleanUpMotionData() {
+    @objc func cleanUpMotionData() {
         DataService.deleteArchives()
     }
     
-    func getActivitiesForTheDay(today: Date) -> [ActivityModel] {
+    func getActivitiesForTheDay(_ today: Date) -> [ActivityModel] {
         
         let settings = getSettings()
         var activities:[ActivityModel] = []
@@ -68,9 +69,6 @@ class IntelligentAssistantService {
             if (setting.isEnabled) {
                 if (setting.activityId == 1) {
                     activities.append(contentsOf: calculateSleep(today: today))
-                }
-                if (setting.activityId == 2) {
-                    activities.append(contentsOf: calculateWalk(today: today))
                 }
                 if (setting.activityId == 3) {
                     activities.append(contentsOf: calculateRun(today: today))
@@ -87,12 +85,7 @@ class IntelligentAssistantService {
         let sleep:[ActivityModel] = []
         return sleep
     }
-    
-    func calculateWalk(today: Date) -> [ActivityModel] {
-        let walk:[ActivityModel] = []
-        return walk
-    }
-    
+       
     func calculateRun(today: Date) -> [ActivityModel] {
         let run:[ActivityModel] = []
         return run
@@ -102,5 +95,13 @@ class IntelligentAssistantService {
         let drive:[ActivityModel] = []
         return drive
     }
-
+    
+    func isEnabled(_ activity: ActivityType) -> Bool {
+        let settings = self.getSettings()
+        
+        if let setting = settings.first(where: { $0.activityId == activity.rawValue }) {
+            return setting.isEnabled
+        }
+        return false
+    }
 }

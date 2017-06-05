@@ -12,4 +12,5 @@ struct ActivityModel {
     var activityName: String
     var datestart: Date
     var location: String
+    var steps: Int
 }

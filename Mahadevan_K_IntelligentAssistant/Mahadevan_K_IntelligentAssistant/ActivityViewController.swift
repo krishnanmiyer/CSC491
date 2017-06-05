@@ -2,94 +2,158 @@
 //  ActivityViewController.swift
 //  Mahadevan_K_IntelligentAssistant
 //
-//  Created by Krishnan Mahadevan on 5/29/17.
+//  Created by Krishnan Mahadevan on 5/20/17.
 //  Copyright © 2017 Krishnan Mahadevan. All rights reserved.
 //
 
 import UIKit
+import CoreMotion
 
 class ActivityViewController: UITableViewController {
 
+    @IBOutlet weak var navigate: UINavigationItem!
+    
+    let activityManager = CMMotionActivityManager()
+    let pedoMeter = CMPedometer()
+    
+    var activities:[ActivityModel] = []
+    var intelligentAssistant = IntelligentAssistantService()
+    var runDate:Date = Calendar.current.startOfDay(for: Date())
+    var previousState: ActivityType = ActivityType.Sleep
+    var currentState: ActivityType = ActivityType.Sleep
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //start detecting motion
+        if(CMMotionActivityManager.isActivityAvailable()){
+            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: { (data: CMMotionActivity!) -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.detectMotion(motion: data)
+                })
+            })
+        }
+        
+        setData()
+        
+        //clean up more than 3 weeks old data
+        Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(self.intelligentAssistant.cleanUpMotionData), userInfo: nil, repeats: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    
+    @IBAction func nextDay(_ sender: UIBarButtonItem) {
+        runDate = Calendar.current.date(byAdding: .day, value: 1, to: runDate)!
+        activities.removeAll()
+        setData()
+        navigate.title = getShortDate()
+    }
+    
+    @IBAction func prevDay(_ sender: UIBarButtonItem) {
+        runDate = Calendar.current.date(byAdding: .day, value: -1, to: runDate)!
+        activities.removeAll()
+        setData()
+        navigate.title = getShortDate()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return activities.count > 0 ? activities.count : 1
     }
 
-    /*
+    private func detectMotion(motion: CMMotionActivity!) {
+        if previousState != getCurrentActivity(motion) {
+            //walking is handled by pedometer
+            if (currentState != ActivityType.Walk) {
+                //update new state in coredata
+                let motionData = MotionDataModel(activityId: currentState.rawValue, activityName: currentState.description, start: Date(), location: (0.0, 0.0), steps: 0)
+                intelligentAssistant.saveMotionData(motion: motionData)
+            }
+            
+            //update previous state to current state
+            previousState = currentState
+        }
+    }
+    
+    private func setData() {
+        //record walking steps for the day
+        
+       
+        if intelligentAssistant.isEnabled(ActivityType.Walk) {
+            if CMPedometer.isStepCountingAvailable() {
+                self.pedoMeter.queryPedometerData(from: runDate as Date, to: self.getEndOfDay()) { (data : CMPedometerData!, error) -> Void in
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        if(error == nil){
+                            let activityModel = ActivityModel(activityName: ActivityType.Walk.description, datestart: self.runDate as Date, location: "", steps: Int(data.numberOfSteps))
+                            self.activities.append(activityModel)
+                            self.tableView.reloadData()
+                        }
+                    })
+                }
+            }
+        }
+
+        //get everthing else
+        activities.append(contentsOf: intelligentAssistant.getActivitiesForTheDay(runDate))
+        self.tableView.reloadData()
+    }
+    
+
+    
+    private func getEndOfDay() -> Date {
+        let components = NSDateComponents()
+        components.day = 1
+        components.second = -1
+        return NSCalendar.current.date(byAdding: (components as DateComponents) as DateComponents, to: self.runDate as Date)!
+    }
+    
+    private func getCurrentActivity(_ motion: CMMotionActivity!) -> ActivityType {
+        if motion.stationary == true {
+            currentState = ActivityType.Sleep
+            
+        } else if motion.walking == true {
+            currentState = ActivityType.Walk
+            
+        } else if motion.running == true {
+            currentState = ActivityType.Run
+            
+        } else if motion.automotive == true {
+            currentState = ActivityType.Drive
+        }
+        return currentState
+    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        if activities.count > 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "activitiesToday", for: indexPath)
+            cell.textLabel?.text = activities[indexPath.row].activityName
+            
+            if (activities[indexPath.row].activityName == ActivityType.Walk.description) {
+                cell.detailTextLabel?.text = "\(activities[indexPath.row].steps) Steps"
+            }
+            else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "hh:mm"
+                cell.detailTextLabel?.text = dateFormatter.string(from: activities[indexPath.row].datestart)
+            }
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "placeholder", for: indexPath)
+            return cell
+        }
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+   
+    private func getShortDate() -> String{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: runDate)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

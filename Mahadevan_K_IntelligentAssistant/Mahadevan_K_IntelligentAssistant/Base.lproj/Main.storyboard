@@ -43,6 +43,23 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeholder" textLabel="UnG-aE-2i2" style="IBUITableViewCellStyleDefault" id="iDF-TG-JCE">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iDF-TG-JCE" id="JM0-au-EOs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Loading...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UnG-aE-2i2">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="khn-Zc-Npf" id="BNW-2b-aZb"/>
@@ -91,13 +108,21 @@
                             </textAttributes>
                             <items>
                                 <navigationItem title="Today" id="P1u-dl-VOM">
-                                    <barButtonItem key="leftBarButtonItem" title="&lt;" id="7gZ-rJ-bkk"/>
-                                    <barButtonItem key="rightBarButtonItem" title="&gt;" id="SI0-OY-aGk"/>
+                                    <barButtonItem key="leftBarButtonItem" title="&lt;" id="7gZ-rJ-bkk">
+                                        <connections>
+                                            <action selector="prevDay:" destination="sar-tf-RXy" id="2xS-bc-Yc2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="&gt;" id="SI0-OY-aGk">
+                                        <connections>
+                                            <action selector="nextDay:" destination="sar-tf-RXy" id="9VN-j9-pmN"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activitiesToday" textLabel="McU-Qj-fm9" detailTextLabel="CYw-gi-JtH" style="IBUITableViewCellStyleSubtitle" id="sSs-hR-kfx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activitiesToday" textLabel="McU-Qj-fm9" detailTextLabel="CYw-gi-JtH" style="IBUITableViewCellStyleValue1" id="sSs-hR-kfx">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sSs-hR-kfx" id="Qgv-ze-tcd">
@@ -105,16 +130,33 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="McU-Qj-fm9">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CYw-gi-JtH">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CYw-gi-JtH">
+                                            <rect key="frame" x="301" y="12" width="59" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeholder" textLabel="nU6-IE-0LV" style="IBUITableViewCellStyleDefault" id="FFp-DQ-z9E">
+                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FFp-DQ-z9E" id="ZVQ-Pc-cT1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nU6-IE-0LV">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -124,6 +166,9 @@
                         </prototypes>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Activity" image="activity" selectedImage="activity" id="767-Fe-p5F"/>
+                    <connections>
+                        <outlet property="navigate" destination="P1u-dl-VOM" id="Smj-EW-w17"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrE-mL-2is" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,7 +177,6 @@
         <!--Settings-->
         <scene sceneID="9gs-4B-ItQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GAi-Zb-bYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Settings" id="i9J-DU-SZq" customClass="SettingsTableViewController" customModule="Mahadevan_K_IntelligentAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JyS-0r-fEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -288,6 +332,7 @@
                         <outlet property="walkSwitch" destination="iGE-XN-6MK" id="wK0-gz-PVk"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAi-Zb-bYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="681" y="-461"/>
         </scene>

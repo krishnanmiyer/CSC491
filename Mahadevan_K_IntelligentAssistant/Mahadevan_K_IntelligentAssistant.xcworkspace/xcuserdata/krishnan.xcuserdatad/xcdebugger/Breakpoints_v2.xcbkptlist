@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mahadevan_K_IntelligentAssistant/SettingsTableViewController.swift"
-            timestampString = "518316046.370879"
+            filePath = "Mahadevan_K_IntelligentAssistant/ActivityViewController.swift"
+            timestampString = "518348326.763477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "sleepSwitch(_:)"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mahadevan_K_IntelligentAssistant/SettingsTableViewController.swift"
-            timestampString = "518316046.370879"
+            filePath = "Mahadevan_K_IntelligentAssistant/ActivityViewController.swift"
+            timestampString = "518347565.11664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "walkingSwitch(_:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "nextDay(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mahadevan_K_IntelligentAssistant/SettingsTableViewController.swift"
-            timestampString = "518316046.370879"
+            filePath = "Mahadevan_K_IntelligentAssistant/ActivityViewController.swift"
+            timestampString = "518347565.11664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "driveSwitch(_:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "prevDay(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mahadevan_K_IntelligentAssistant/SettingsTableViewController.swift"
-            timestampString = "518316046.370879"
+            filePath = "Mahadevan_K_IntelligentAssistant/ActivityViewController.swift"
+            timestampString = "518348326.763477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "runSwitch(_:)"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "getEndOfDay()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +73,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mahadevan_K_IntelligentAssistant/IntelligentAssistantService.swift"
-            timestampString = "518317103.12508"
+            filePath = "Mahadevan_K_IntelligentAssistant/ActivityViewController.swift"
+            timestampString = "518348326.763477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "getSettings()"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "setData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mahadevan_K_IntelligentAssistant/ActivityViewController.swift"
+            timestampString = "518348326.763477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "setData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

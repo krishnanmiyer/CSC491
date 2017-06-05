@@ -12,6 +12,6 @@ struct MotionDataModel {
     var activityId: Int16
     var activityName: String
     var start: Date
-    var end: Date
     var location: (Float, Float)
+    var steps: Int32
 }

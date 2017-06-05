@@ -26,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		033E266D1EE530CA005DEF6A /* Mahadevan_K_IntelligentAssistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mahadevan_K_IntelligentAssistant.entitlements; sourceTree = "<group>"; };
 		03B25AFE1EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mahadevan_K_IntelligentAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B25B011EDCA87E00539C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03B25B061EDCA87E00539C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		03B25B001EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				033E266D1EE530CA005DEF6A /* Mahadevan_K_IntelligentAssistant.entitlements */,
 				03B25B1E1EE46D5700539C37 /* Model */,
 				03B25B1D1EE46D3700539C37 /* Controller */,
 				03B25B1C1EE46D1B00539C37 /* Service */,
