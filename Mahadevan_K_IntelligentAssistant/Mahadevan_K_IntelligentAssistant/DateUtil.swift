@@ -16,3 +16,10 @@ public func ==(a: NSDate, b: NSDate) -> Bool {
 }
 
 extension NSDate: Comparable { }
+
+enum ActivityType: Int16{
+    case Sleep = 1, Walk = 2, Run = 3, Drive = 4
+    var description: String {
+        get { return String(describing: self) }
+    }
+}

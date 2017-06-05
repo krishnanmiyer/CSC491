@@ -13,7 +13,7 @@
         <!--Developer Mode-->
         <scene sceneID="h0Y-Mt-cAO">
             <objects>
-                <tableViewController title="Developer Mode" id="khn-Zc-Npf" sceneMemberID="viewController">
+                <tableViewController title="Developer Mode" id="khn-Zc-Npf" customClass="DeveloperModeViewController" customModule="Mahadevan_K_IntelligentAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v1l-vF-fqV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,11 +49,11 @@
                             <outlet property="delegate" destination="khn-Zc-Npf" id="LU9-QD-7gr"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Developer Mode" id="bNo-aP-cYX"/>
+                    <navigationItem key="navigationItem" id="3oR-WN-qYN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rP4-Ws-49Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="853"/>
+            <point key="canvasLocation" x="681" y="875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bq4-Wt-j7F">
@@ -67,12 +67,12 @@
                     <connections>
                         <segue destination="sar-tf-RXy" kind="relationship" relationship="viewControllers" id="c3I-If-rKU"/>
                         <segue destination="i9J-DU-SZq" kind="relationship" relationship="viewControllers" id="woC-04-CJM"/>
-                        <segue destination="khn-Zc-Npf" kind="relationship" relationship="viewControllers" id="aRI-M2-cLv"/>
+                        <segue destination="QsJ-7T-ySZ" kind="relationship" relationship="viewControllers" id="aRI-M2-cLv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBc-C2-c9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="72"/>
+            <point key="canvasLocation" x="-100" y="-130"/>
         </scene>
         <!--Activity-->
         <scene sceneID="vyF-W0-A4H">
@@ -123,17 +123,17 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Activity" id="767-Fe-p5F"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="activity" selectedImage="activity" id="767-Fe-p5F"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrE-mL-2is" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="401"/>
+            <point key="canvasLocation" x="681" y="217"/>
         </scene>
         <!--Settings-->
         <scene sceneID="9gs-4B-ItQ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAi-Zb-bYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController title="Settings" id="i9J-DU-SZq" customClass="SettingsViewController" customModule="Mahadevan_K_IntelligentAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="i9J-DU-SZq" customClass="SettingsTableViewController" customModule="Mahadevan_K_IntelligentAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JyS-0r-fEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,8 +168,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ikt-BO-3Qa">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ikt-BO-3Qa">
                                                     <rect key="frame" x="312" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="sleepSwitch:" destination="i9J-DU-SZq" eventType="valueChanged" id="crb-hJ-ag0"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -196,8 +199,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iGE-XN-6MK">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iGE-XN-6MK">
                                                     <rect key="frame" x="312" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="walkingSwitch:" destination="i9J-DU-SZq" eventType="valueChanged" id="AFw-R9-P4w"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -224,8 +230,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H51-OC-aGK">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H51-OC-aGK">
                                                     <rect key="frame" x="312" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="runSwitch:" destination="i9J-DU-SZq" eventType="valueChanged" id="xHT-iq-Np0"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -252,8 +261,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIp-ic-ikd">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EIp-ic-ikd">
                                                     <rect key="frame" x="312" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="driveSwitch:" destination="i9J-DU-SZq" eventType="valueChanged" id="6S5-0S-FUt"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -268,10 +280,40 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Settings" id="n8L-Ux-Te1"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="n8L-Ux-Te1"/>
+                    <connections>
+                        <outlet property="driveSwitch" destination="EIp-ic-ikd" id="BgY-HN-I47"/>
+                        <outlet property="runSwitch" destination="H51-OC-aGK" id="k3g-Kt-iXw"/>
+                        <outlet property="sleepSwitch" destination="Ikt-BO-3Qa" id="hRQ-ML-H4f"/>
+                        <outlet property="walkSwitch" destination="iGE-XN-6MK" id="wK0-gz-PVk"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="852" y="-275.71214392803603"/>
+            <point key="canvasLocation" x="681" y="-461"/>
+        </scene>
+        <!--Developer Mode-->
+        <scene sceneID="Z1G-81-OrM">
+            <objects>
+                <navigationController title="Developer Mode" automaticallyAdjustsScrollViewInsets="NO" id="QsJ-7T-ySZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Developer Mode" image="developer" selectedImage="developer" id="bNo-aP-cYX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CbL-t5-gVA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="khn-Zc-Npf" kind="relationship" relationship="rootViewController" id="ry3-Cm-L8D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WxW-gP-5Bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="activity" width="40" height="40"/>
+        <image name="developer" width="40" height="40"/>
+        <image name="settings" width="40" height="40"/>
+    </resources>
 </document>

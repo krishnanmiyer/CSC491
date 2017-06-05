@@ -12,22 +12,6 @@ import CoreData
 
 class DataService {
     
-    static func getActivities() -> [Activity] {
-        
-        let context = getContext()
-        
-        var activities: [Activity] = []
-        
-        do {
-            activities = try context.fetch(Activity.fetchRequest())
-            return activities
-        } catch {
-            print("Fetching activities failed")
-        }
-        
-        return activities
-    }
-    
     static func getSettings() -> [UserSetting] {
         
         let context = getContext()
@@ -81,11 +65,11 @@ class DataService {
         return motions
     }
     
+    
     static func saveSetting(activityId: Int16, enabled: Bool) {
         
         let context = getContext()
-        
-        let predicate = NSPredicate(format: "activityId == %@", activityId)
+        let predicate = NSPredicate(format: "activityId == %d", activityId)
         let request = NSFetchRequest<UserSetting>(entityName: "UserSetting")
         request.predicate = predicate
         
@@ -109,7 +93,7 @@ class DataService {
         }
     }
 
-    static func saveActivity(activityId: Int16, start: Date, end: Date, latitude: Float, longitude: Float) {
+    static func saveMotionData(activityId: Int16, start: Date, end: Date, latitude: Float, longitude: Float) {
        
         do {
             let context = getContext()

@@ -12,18 +12,17 @@ class IntelligentAssistantService {
 
     func getSettings() -> [SettingsModel] {
         
-        let activities = DataService.getActivities()
         let userSettings = DataService.getSettings()
         
         var settings:[SettingsModel] = []
         
         for userSetting in userSettings {
-            let activity = activities.first(where: { $0.activityId == userSetting.activityId })
-            
-            let setting = SettingsModel(activityName:(activity?.activityDesc)!,
-                                        isEnabled: userSetting.enabled,
-                                        activityId: userSetting.activityId)
-            settings.append(setting)
+            if let activity = ActivityType(rawValue: userSetting.activityId)?.description {
+                let setting = SettingsModel(activityName: activity,
+                                            isEnabled: userSetting.enabled,
+                                            activityId: userSetting.activityId)
+                settings.append(setting)
+            }
         }
         return settings
     }
@@ -34,27 +33,26 @@ class IntelligentAssistantService {
     
     func getMotionDataAll() -> [MotionDataModel] {
         
-        let activities = DataService.getActivities()
         let data = DataService.getMotionData()
         
         var motions:[MotionDataModel] = []
         
         for rec in data {
-            let activity = activities.first(where: { $0.activityId == rec.activityId })
-            
-            let motion = MotionDataModel(activityId: rec.activityId
-                , activityName: (activity?.activityDesc)!
-                , start: rec.start! as Date
-                , end: rec.end! as Date
-                , location: (rec.latitude, rec.longitude))
-            
-            motions.append(motion)
+            if let activity = ActivityType(rawValue: rec.activityId)?.description {
+                let motion = MotionDataModel(activityId: rec.activityId
+                    , activityName: activity
+                    , start: rec.start! as Date
+                    , end: rec.end! as Date
+                    , location: (rec.latitude, rec.longitude))
+                
+                motions.append(motion)
+            }
         }
         return motions
     }
     
     func saveMotionData(motion: MotionDataModel) {
-        DataService.saveActivity(activityId: motion.activityId, start: motion.start, end: motion.end, latitude: motion.location.0, longitude: motion.location.1)
+        DataService.saveMotionData(activityId: motion.activityId, start: motion.start, end: motion.end, latitude: motion.location.0, longitude: motion.location.1)
     }
     
     func cleanUpMotionData() {

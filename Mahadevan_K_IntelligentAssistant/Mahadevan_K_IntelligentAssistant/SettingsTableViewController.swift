@@ -1,41 +1,80 @@
 //
-//  SettingsController.swift
+//  SettingsTableViewController.swift
 //  Mahadevan_K_IntelligentAssistant
 //
-//  Created by Krishnan Mahadevan on 5/29/17.
+//  Created by Krishnan Mahadevan on 6/4/17.
 //  Copyright © 2017 Krishnan Mahadevan. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController {
 
+    @IBOutlet weak var sleepSwitch: UISwitch!
+    @IBOutlet weak var walkSwitch: UISwitch!
+    @IBOutlet weak var runSwitch: UISwitch!
+    @IBOutlet weak var driveSwitch: UISwitch!
+    
+    var intelligentAssistant = IntelligentAssistantService()
+    
+    @IBAction func walkingSwitch(_ sender: UISwitch) {
+        intelligentAssistant.saveSettings(activityId: ActivityType.Walk.rawValue, status: sender.isOn)
+    }
+    
+    @IBAction func sleepSwitch(_ sender: UISwitch) {
+        intelligentAssistant.saveSettings(activityId: ActivityType.Sleep.rawValue, status: sender.isOn)
+    }
+    
+    @IBAction func runSwitch(_ sender: UISwitch) {
+        intelligentAssistant.saveSettings(activityId: ActivityType.Run.rawValue, status: sender.isOn)
+    }
+    
+    @IBAction func driveSwitch(_ sender: UISwitch) {
+        intelligentAssistant.saveSettings(activityId: ActivityType.Drive.rawValue, status: sender.isOn)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
+        loadData()
+     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    private func loadData() {
+        let settings = intelligentAssistant.getSettings()
+        
+        for setting in settings {
+            if (setting.activityId == ActivityType.Sleep.rawValue) {
+                sleepSwitch.isOn = setting.isEnabled
+            }
+            if (setting.activityId == ActivityType.Walk.rawValue) {
+                walkSwitch.isOn = setting.isEnabled
+            }
+            if (setting.activityId == ActivityType.Run.rawValue) {
+                runSwitch.isOn = setting.isEnabled
+            }
+            if (setting.activityId == ActivityType.Drive.rawValue) {
+                driveSwitch.isOn = setting.isEnabled
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
+    /*
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+    */
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,5 +130,4 @@ class SettingsViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
