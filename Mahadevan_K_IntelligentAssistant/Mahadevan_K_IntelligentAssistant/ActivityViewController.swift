@@ -18,7 +18,7 @@ class ActivityViewController: UITableViewController {
     
     var activities:[ActivityModel] = []
     var intelligentAssistant = IntelligentAssistantService()
-    var runDate:Date = Calendar.current.startOfDay(for: Date())
+    var runDate:Date = Date()
     var previousState: ActivityType = ActivityType.Sleep
     var currentState: ActivityType = ActivityType.Sleep
     
@@ -34,9 +34,18 @@ class ActivityViewController: UITableViewController {
             })
         }
         
+        //set date on local time zone
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+        runDate = calendar.startOfDay(for: Date())
+        
+        //populate the table
         setData()
         
-        //clean up more than 3 weeks old data
+        //update screen in every 30 seconds
+        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.setData), userInfo: nil, repeats: true)
+        
+        //run clean up more than 3 weeks old data at the start of everyday
         Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(self.intelligentAssistant.cleanUpMotionData), userInfo: nil, repeats: true)
     }
     
@@ -68,21 +77,18 @@ class ActivityViewController: UITableViewController {
 
     private func detectMotion(motion: CMMotionActivity!) {
         if previousState != getCurrentActivity(motion) {
-            //walking is handled by pedometer
-            if (currentState != ActivityType.Walk) {
-                //update new state in coredata
-                let motionData = MotionDataModel(activityId: currentState.rawValue, activityName: currentState.description, start: Date(), location: (0.0, 0.0), steps: 0)
-                intelligentAssistant.saveMotionData(motion: motionData)
-            }
+
+            //update new state in coredata
+            let motionData = MotionDataModel(activityId: currentState.rawValue, activityName: currentState.description, start: Date(), location: (0.0, 0.0), steps: 0)
+            intelligentAssistant.saveMotionData(motion: motionData)
             
             //update previous state to current state
             previousState = currentState
         }
     }
     
-    private func setData() {
+    @objc private func setData() {
         //record walking steps for the day
-        
        
         if intelligentAssistant.isEnabled(ActivityType.Walk) {
             if CMPedometer.isStepCountingAvailable() {
@@ -127,7 +133,6 @@ class ActivityViewController: UITableViewController {
         }
         return currentState
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if activities.count > 0 {

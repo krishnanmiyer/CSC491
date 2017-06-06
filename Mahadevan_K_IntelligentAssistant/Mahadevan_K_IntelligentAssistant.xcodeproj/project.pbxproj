@@ -19,7 +19,7 @@
 		03B25B241EE46DF200539C37 /* MotionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B231EE46DF200539C37 /* MotionDataModel.swift */; };
 		03B25B261EE4781200539C37 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B25B251EE4781200539C37 /* CoreData.framework */; };
 		03B25B2C1EE48AF700539C37 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B2B1EE48AF700539C37 /* DataService.swift */; };
-		03B25B2F1EE4A43D00539C37 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B2E1EE4A43D00539C37 /* DateUtil.swift */; };
+		03B25B2F1EE4A43D00539C37 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B2E1EE4A43D00539C37 /* Common.swift */; };
 		03B25B311EE4BC7D00539C37 /* DeveloperModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B301EE4BC7D00539C37 /* DeveloperModeViewController.swift */; };
 		03B25B331EE4C97000539C37 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B25B321EE4C97000539C37 /* SettingsTableViewController.swift */; };
 		AD86CEEAB605B835066FE345 /* Pods_Mahadevan_K_IntelligentAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AA63AB1FB8EF0A59FE7251 /* Pods_Mahadevan_K_IntelligentAssistant.framework */; };
@@ -41,7 +41,7 @@
 		03B25B231EE46DF200539C37 /* MotionDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionDataModel.swift; sourceTree = "<group>"; };
 		03B25B251EE4781200539C37 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		03B25B2B1EE48AF700539C37 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		03B25B2E1EE4A43D00539C37 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		03B25B2E1EE4A43D00539C37 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		03B25B301EE4BC7D00539C37 /* DeveloperModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperModeViewController.swift; sourceTree = "<group>"; };
 		03B25B321EE4C97000539C37 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4ED4CFA796DCAE3AE4D58194 /* Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mahadevan_K_IntelligentAssistant/Pods-Mahadevan_K_IntelligentAssistant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		03B25B2D1EE4A41800539C37 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				03B25B2E1EE4A43D00539C37 /* DateUtil.swift */,
+				03B25B2E1EE4A43D00539C37 /* Common.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B25B0A1EDCA87E00539C37 /* Mahadevan_K_IntelligentAssistant.xcdatamodeld in Sources */,
-				03B25B2F1EE4A43D00539C37 /* DateUtil.swift in Sources */,
+				03B25B2F1EE4A43D00539C37 /* Common.swift in Sources */,
 				03B25B241EE46DF200539C37 /* MotionDataModel.swift in Sources */,
 				03B25B331EE4C97000539C37 /* SettingsTableViewController.swift in Sources */,
 				03B25B021EDCA87E00539C37 /* AppDelegate.swift in Sources */,
