@@ -134,6 +134,7 @@ class IntelligentAssistantService {
         
         for item in top.prefix(max) {
             component.hour = item.1
+            component.minute = 0
             let activity = ActivityModel(activityName: activity.description, datestart: calendar.date(from: component)!, location: "", steps: 0)
             drive.append(activity)
         }

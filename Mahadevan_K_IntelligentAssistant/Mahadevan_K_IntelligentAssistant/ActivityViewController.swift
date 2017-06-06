@@ -43,7 +43,7 @@ class ActivityViewController: UITableViewController {
         setData()
         
         //update screen in every 30 seconds
-        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.setData), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.clearAndSetData), userInfo: nil, repeats: true)
         
         //run clean up more than 3 weeks old data at the start of everyday
         Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(self.intelligentAssistant.cleanUpMotionData), userInfo: nil, repeats: true)
@@ -55,15 +55,14 @@ class ActivityViewController: UITableViewController {
     
     @IBAction func nextDay(_ sender: UIBarButtonItem) {
         runDate = Calendar.current.date(byAdding: .day, value: 1, to: runDate)!
-        activities.removeAll()
-        setData()
+        clearAndSetData()
         navigate.title = getShortDate()
     }
     
     @IBAction func prevDay(_ sender: UIBarButtonItem) {
         runDate = Calendar.current.date(byAdding: .day, value: -1, to: runDate)!
         activities.removeAll()
-        setData()
+        clearAndSetData()
         navigate.title = getShortDate()
     }
     
@@ -109,7 +108,10 @@ class ActivityViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-
+    @objc private func clearAndSetData() {
+        activities.removeAll()
+        setData()
+    }
     
     private func getEndOfDay() -> Date {
         let components = NSDateComponents()
