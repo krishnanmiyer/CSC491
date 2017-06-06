@@ -21,6 +21,7 @@ class ActivityViewController: UITableViewController {
     var runDate:Date = Date()
     var previousState: ActivityType = ActivityType.Sleep
     var currentState: ActivityType = ActivityType.Sleep
+    var calendar = Calendar.current
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,6 @@ class ActivityViewController: UITableViewController {
         }
         
         //set date on local time zone
-        var calendar = Calendar.current
         calendar.timeZone = NSTimeZone.local
         runDate = calendar.startOfDay(for: Date())
         
@@ -76,7 +76,7 @@ class ActivityViewController: UITableViewController {
 
     private func detectMotion(motion: CMMotionActivity!) {
         if previousState != getCurrentActivity(motion) {
-
+            
             //update new state in coredata
             let motionData = MotionDataModel(activityId: currentState.rawValue, activityName: currentState.description, start: Date(), location: (0.0, 0.0), steps: 0)
             intelligentAssistant.saveMotionData(motion: motionData)
